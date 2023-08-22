@@ -5,12 +5,23 @@
 ## 计算机探究计算机启动过程
 
 **作用解析**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/83277e53-4071-47f8-99a7-c53b12a28d1d)
 
-Disk : 存放OS和Bootloader
 
-BIOS : 基于I/O处理系统
-
+Disk（硬盘） : 存放OS和Bootloader
 Bootloader : 加载OS，将OS放入内存
+
+BIOS （basic I/O system--存放再内存中）: 基于I/O处理系统（一按电源，计算机系统开始检测各种外设）
+1.POST（加电自检）（检查自身各种各样设备是否能正常工作） 
+2.寻找显卡和执行BIOS
+3.把bootloader放到内存中去
+
+
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/755a41e2-eae6-4cfc-a2d3-f4f20d07147a)
+
+
+
 
 **结构**
 
