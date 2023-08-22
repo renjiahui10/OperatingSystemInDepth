@@ -56,10 +56,9 @@ Linux Windows Android 的界面属于外壳(Shell) ，而不是内核(kernel)。
 *    uCore仿的是unix这种单体的，模块化的架构设计。所谓的单体是指各个模块之间是通过函数调用（紧耦合的方式）来实现的
 *    紧耦合的方式做出的操作系统软件比较庞大，学术界觉得能否改用松耦合的方式，也就是类似于模块之间传递信息的方式，基于这个idea，产生了微内核的思想，也就是只在内核中放最基本的功能（尽可能八内核功能移到用户空间），比如说中断处理和消息传递，像文件系统、内存管理、网络协议栈都是放在外围，以进程和程序的形式存在，以服务的形式存在，服务和服务之间是通过内核的消息传递机制来进行通讯。这种紧耦合的方式更加灵活，但是相应的性能也会有所降低，比如文件系统和内存管理系统进行交互，需要将数据导给内核，内核再导给内存管理系统，需要多次拷贝，相比于函数调用的一次拷贝，效率下降了
   ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e8b104a-05db-40d0-881d-3c9496edcb7d)
-
-*     目前还没有这种微内核的设计，主要是性能不好
-*     还有一种极端的架构——外核，这种架构希望内核分成两份，一个靠近内核的Exokernel，还有library os，不同的应用程序对应不同的library os，然后共同访问一个Exokernel，由Exokernel统一完成对硬件的管理，可以使得不同的应用程序对应的library os可以安全有效的并发的来使用硬件资源
-*     虚拟机监控器(VMM), 它是在传统的os系统之下的，虚拟出多个计算机系统，可以再一台物理计算机上虚拟出多台计算机系统
+* 目前还没有这种微内核的设计，主要是性能不好
+* 还有一种极端的架构——外核，这种架构希望内核分成两份，一个靠近内核的Exokernel，还有library os，不同的应用程序对应不同的library os，然后共同访问一个Exokernel，由Exokernel统一完成对硬件的管理，可以使得不同的应用程序对应的library os可以安全有效的并发的来使用硬件资源
+* 虚拟机监控器(VMM), 它是在传统的os系统之下的，虚拟出多个计算机系统，可以再一台物理计算机上虚拟出多台计算机系统
     ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5dc76e21-df96-4448-8456-e7a214cbd37a)
     ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4cf1cac7-bfed-4e6e-a17c-2bd5c151ccc0)
     ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/142fab43-8adb-4189-8a26-3fe93a1f677a)
