@@ -60,7 +60,11 @@ Linux Windows Android 的界面属于外壳(Shell) ，而不是内核(kernel)。
 * 还有一种极端的架构——外核，这种架构希望内核分成两份，一个靠近内核的Exokernel，还有library os，不同的应用程序对应不同的library os，然后共同访问一个Exokernel，由Exokernel统一完成对硬件的管理，可以使得不同的应用程序对应的library os可以安全有效的并发的来使用硬件资源
 * 虚拟机监控器(VMM), 它是在传统的os系统之下的，虚拟出多个计算机系统，可以再一台物理计算机上虚拟出多台计算机系统
     ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5dc76e21-df96-4448-8456-e7a214cbd37a)
+
+  
     ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4cf1cac7-bfed-4e6e-a17c-2bd5c151ccc0)
+
+  
     ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/142fab43-8adb-4189-8a26-3fe93a1f677a)
 
 
