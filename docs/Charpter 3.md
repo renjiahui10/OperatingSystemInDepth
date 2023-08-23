@@ -1,4 +1,4 @@
-# 深入理解操作系统 第三章
+# 深入理解操作系统 第三章 计算机体系结构及内存分层体系  
 
 >   第三章的主要内容是：操作系统的物理内存管理
 
@@ -7,6 +7,8 @@
 1.  CPU
 2.  内存
 3.  I/O
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/602a969b-e801-43ac-bf74-31046eff640a)
+
 
 ## 内存分层体系
 
