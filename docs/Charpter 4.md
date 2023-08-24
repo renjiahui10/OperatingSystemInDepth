@@ -68,8 +68,17 @@
 物理地址 : 段表中的起始地址 + 二元组中的偏移地址
 
 ### 分页(Paging)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d372c915-5a24-47c3-b7a6-4d15e6e98c2a)
+分页和分段很相似，在分页中也有页号和偏移，两者主要的区别是，段的长度时可变的，而页（页帧）的长度时不可变的
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8b8342ac-1829-408a-b8cb-441afbf9ae7f)
+帧——物理内存的组织和布局方式
+页——逻辑地址的组织和布局方式
+
+
 
 #### 分页地址空间
+
+
 
 划分物理内存至固定大小的帧(Frame)
 
@@ -85,6 +94,7 @@
 -   MMU / TLB
 
 **帧(Frame)**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/bc683769-1078-405c-8e77-e40bb4e1c96e)
 
 物理内存被分割为大小相等的帧. 一个内存物理地址是一个二元组(f, o) → (帧号, 帧内偏移)
 
@@ -95,26 +105,24 @@
 物理地址 = 2^S * f + o
 
 (例子 : 16-bit地址空间, 9-bit(512 byte) 大小的页帧 物理地址 = (3,6) 物理地址 = 2^9 * 3 + 6 = 1542)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/48c6a66f-8c4c-4f15-bf04-04fc0e3e1345)
+
 
 >   分页和分段的最大区别 : 这里的 S 是一个固定的数, 而分段中的长度限制不定
 
 **页(Page)**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8326a9a6-1ccb-4ee9-8383-b30d045bf9f0)
 
-一个程序的逻辑地址空间被划分为大小相等的页. 页内偏移的大小 = 帧内偏移的大小 页号大小 <> 帧号大小
-
-一个逻辑地址是一个二元组(p, o) → (页号, 页内偏移)
-
-页号 : P位, 共有2^P个页
-
-页内偏移 : S位, 每页有2^S个字节
-
-虚拟地址  = 2^S * p + o
+上图中页号和帧号的大小可能不匹配，页的数量可以比帧的数量大（用于虚拟内存）
+但是页内偏移和帧内偏移是一致的
 
 #### 页寻址方案
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f5270b3e-59cf-4c78-a100-c2b1cb36c3b0)
+上图中页的数量比帧的数量大
+页表由操作系统维护和创建, 是在操作系统初始化时，页表保存了页号和帧号之间的对应关系之间的映射关系
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/abacd349-1ab7-4ae1-8783-92eef35d2153)
 
-操作系统维护一张页表, 页表保存了逻辑地址——物理地址之间的映射关系
 
-存储 : (页号, 帧号)
 
 -   逻辑地址空间应当大于物理内存空间
 -   页映射到帧
