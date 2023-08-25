@@ -1,8 +1,13 @@
 # 深入理解操作系统 第五章
 
 >   第五章的主要内容是：操作系统的虚拟内存管理技术
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/53d53a7f-09b8-4715-bc97-0c41c96f7ae1)
+
 
 ## 虚拟内存的起因
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0fd552c9-ff31-4a49-a61c-30e582abf21f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6e0ddafc-3d82-49f5-aefd-293a97196857)
+
 
 使用硬盘/磁盘使更多的程序在有限的内存中运行
 
