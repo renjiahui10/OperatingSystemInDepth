@@ -131,8 +131,14 @@
 -   不是所有的页都有对应的帧
 
 ### 页表(Page Table)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4f41ce10-32c4-4c24-a5d0-5912e8cabd96)
+怎么来实现页表，怎么能实现的更加高效，更加节省空间，是由操作系统和硬件相互配合完成的目标，
 
 #### 页表概述
+页表其实就是一个大数组
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/503f92c6-9b78-4db1-8d89-6e64791753e3)
+
+
 
 每一个运行的程序都有一个页表
 
@@ -143,13 +149,15 @@
 
 CPU根据程序的page的页号的若干位, 计算出索引值index, 在页表中搜索这个index, 得到的是帧号, 帧号和原本的offset组成物理地址.
 
-页表中还有一些特殊标志位
+页表中还有一些特殊标志位（标志这个页表项是否合法————也就是该逻辑地址是否对应真实的物理地址，该页表项对应的内存是否读过或写过
 
 -   dirty bit,
 -   resident bit, (0 : 对应的物理页帧在内存中不存在 ; 1 : 存在)
 -   clock / reference bit
 
 **转换实例**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b3d63371-7811-4488-9480-bd83ed3b94ad)
+
 
 16位地址的系统
 
@@ -166,24 +174,13 @@ Flags |  Frame nums
 
 0 1 1    0 0 1 0 0           → 页帧是4 偏移是 1023 → 物理地址 (4, 1023)
 
-#### 分页机制的性能问题
+#### 分页机制的性能问题（时间问题和空间问题）
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8af1e414-69ab-413b-927d-216eef06ef05)
 
-访问一个内存单元需要2次内存访问
 
--   一次用于获取页表项
--   一次用于访问数据
+#### 转换后备缓冲区(TLB————CPU中MMU的一部分，是一块相关存储器，可以并发的快速查找，但是容量有限)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/20e398f7-5e83-4a1d-b7c6-62ffc786ec7e)
 
-页表可能非常大
-
--   64位机器如果每页1024字节, 那么一个页表的大小会是多少？(2^64 / 2^10 = 2^54 存放不下)
--   每一个运行的程序都需要有一个页表
-
-如何处理？
-
--   缓存(Caching)
--   间接(Indirection)访问
-
-#### 转换后备缓冲区(TLB)
 
 缓解时间问题
 
@@ -191,9 +188,11 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 
 缓存近期访问的页帧转换表项
 
--   TLB使用关联内存实现, 具备快速访问性能
+-   TLB使用相关存储器实现, 具备快速访问性能
 -   如果TLB命中, 物理页号可以很快被获取
--   如果TLB未命中, 对应的表项被更新到TLB中(x86的CPU由硬件实现, 其他的可能是由操作系统实现)
+-   如果TLB未命中, 对应的表项被更新到TLB中(x86的CPU由硬件实现, 其他的可能是由操作系统实现）
+
+
 
 #### 二级/多级页表
 
