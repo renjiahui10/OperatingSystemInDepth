@@ -262,6 +262,9 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 
 ##### 基于关联内存(associative memory)的方案
 也就是基于关联存储器（相关存储器————可以并行的快速查找）
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/73f09a5c-6334-414b-b578-37793ee32b2b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/aa9c38ad-cfae-4328-b540-31399d554a42)
+
 
 关联存储器硬件设计复杂, 导致容量不大, 需要放置在CPU中
 
@@ -275,6 +278,9 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 ##### 基于哈希(hash)的方案
 
 哈希函数 : h(PID, p) 从 PID 标号获得页号
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a8e3339f-d778-4edd-95cd-a090bb7064c9)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/31bbf81a-7b1c-402d-85b0-683dd67e43c0)
 
 在反向页表中通过哈希算法来搜索一个页对应的帧号
 
