@@ -178,7 +178,7 @@ Flags |  Frame nums
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8af1e414-69ab-413b-927d-216eef06ef05)
 
 
-#### 转换后备缓冲区(TLB————CPU中MMU的一部分，是一块相关存储器，可以并发的快速查找，但是容量有限)
+#### 转换后备缓冲区(TLB————CPU中MMU的一部分，是一块相关存储器（关联存储器）————可以并发的快速查找，但是容量有限)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/20e398f7-5e83-4a1d-b7c6-62ffc786ec7e)
 
 
@@ -195,7 +195,11 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 
 #### 二级/多级页表
 
+解决空间问题 
+
 时间换空间
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f01c96a8-2f00-4453-bf6e-076c108d3df5)
+一级页表的页表项存储着二级页表的起始地址
 
 二级页表
 
@@ -205,9 +209,13 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 
 多级页表
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a3d58376-361a-43c9-ad27-c38693a1a367)
+
 -   通过把页号分为k个部分, 来实现多级间接页表, 建立一棵页表"树"
 
 #### 反向页表
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/90aab1b1-2862-450d-9357-f610841e39a6)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ddf16fac-a3c5-4079-ba02-66c4ac75075a)
 
 解决大地址空间问题
 
@@ -219,6 +227,10 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 -   不是让页表与逻辑地址空间的大小相对应, 而是当页表与物理地址空间的大小相对应. 逻辑地址空间增长速度快于物理地址空间
 
 ##### 基于页寄存器(Page Registers)的方案
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8254694d-734b-4b75-b4fc-8e6758526fca)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f714208e-16bd-477e-bf22-cedb521476bb)
+
 
 存储 (帧号, 页号) 使得表大小与物理内存大小相关, 而与逻辑内存关联减小.
 
@@ -249,8 +261,9 @@ Translation Look-aside Buffer(TLB) 是一个缓冲区. CPU中有快表TLB(可以
 -   在需要在反向页表中搜索想要的页号
 
 ##### 基于关联内存(associative memory)的方案
+也就是基于关联存储器（相关存储器————可以并行的快速查找）
 
-硬件设计复杂, 容量不大, 需要放置在CPU中
+关联存储器硬件设计复杂, 导致容量不大, 需要放置在CPU中
 
 -   如果帧数较少, 页寄存器可以被放置在关联内存中
 -   在关联内存中查找逻辑页号
