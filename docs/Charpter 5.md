@@ -8,6 +8,9 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0fd552c9-ff31-4a49-a61c-30e582abf21f)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6e0ddafc-3d82-49f5-aefd-293a97196857)
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/33b9e410-f089-4040-84c9-31a43a5a7536)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8a0d7db9-62b6-44ed-9965-0dafb6b19dcd)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3d7ea014-3812-40fd-9c4b-81fed84088aa)
 
 使用硬盘/磁盘使更多的程序在有限的内存中运行
 
@@ -16,6 +19,8 @@
 ## 覆盖技术
 
 如果是程序太大, 超出了内存的容量, 可以采用手动的概率(overlay)技术, 只把需要的指令和数据保存在内存当中
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f474454a-7de5-43ee-887a-fab86675318b)
+
 
 目的 : 是在较小的可用内存中运行较大的程序, 常用于多道程序系统, 与分区存储管理配合使用.
 
