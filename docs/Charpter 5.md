@@ -35,12 +35,15 @@
 >   也就是说,程序松耦合的部分可以按需装入内存,不需要的时候放在外存中,多个不常用部分共用一个分区.
 
 实例 :
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5855e2b5-3a65-4bf3-9e98-c39fb31404f1)
 
 A(20k) ____B(50k) ____ D(30k)
         | ____ C(30k) ____ E(20k)
                              |____ F(40k)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4a46a69d-ccd0-4f57-bb52-a8a429624716)
 
 因此不需要将整个程序190k的数据全部放入内存中, 而是划分为 常驻区(20k) 覆盖区0(50k) 覆盖区1(40k) 压缩至了110k的内存空间使用
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e9939c4b-09ee-4a78-be5f-a6a7169ac950)
 
 缺点 :
 
