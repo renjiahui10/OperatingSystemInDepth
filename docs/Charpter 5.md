@@ -115,16 +115,14 @@ A(20k) ____B(50k) ____ D(30k)
 为了完成请求调页和页面置换功能，需要在页表项中增加一些flag位，来辅助实现。
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c4d0f811-82ef-4f9b-b558-8d0f2c1404e7)
 上图中的可执行是指类似.exe的文件，访问位是指页表中页表项的物理页帧号对应的物理页的内容有没有被访问过。访问位 : 如果该页被访问过(包括读写操作), 则设置此位. 用于页面置换算法，之前被访问过的可能再次被访问，因此不能置换出去
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/bdbc49e0-a1eb-4101-a18b-8ddb771720a3)
 
-    3-   缺页中断处理过程 :
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d92f1401-38d5-4e36-b85d-31f8964379d7)
 
-        1.  如果在内存中有空闲的物理页面, 则分配一物理页帧f, 然后转第4步; 否则转到第2步;
-        2.  采用某种页面置换算法, 选择一个将被替换的物理页帧f, 它所对应的逻辑页为q, 如果该页在内存期间被修改过, 则需要把它写回外存;
-        3.  对q所对应的页表项修改, 把驻留位置为0;
-        4.  将需要访问的页p装入到物理页面f当中;
-        5.  修改p所对应的页表项的内容, 把驻留位置为1, 把物理页帧号置为f;
-        6.  重新运行被中断是指令.
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5bcf0598-a937-41bf-82ec-40719dd7aa7f)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5b025507-70c7-4f2f-bb67-dbd80fb37e0e)
+
+
 
         >   在何处保存未被映射的页?
         >
