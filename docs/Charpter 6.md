@@ -39,43 +39,38 @@
 这是一种理想情况, 在实际系统中是无法实现的, 因为操作系统无法知道每一个页面要等待多长时间以后才会再次被访问.
 
 可用作其他算法的性能评价的依据.(在一个模拟器上运行某个程序, 并记录每一次的页面访问情况, 在第二遍运行时即可使用最优算法)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f552b910-d571-4329-bdd8-6043825e6cc3)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d01ea84c-6532-4840-bcb8-5749e10b2cc5)
+
 
 ### 先进先出算法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2c2f43d1-0811-4467-9c2e-2ae7340ed9e3)
 
-基本思路 : 选择在内存中驻留时间最长的页面淘汰. 具体来说, 系统维护着一个链表, 记录了所有位于内存当中的逻辑页面. 从链表的排列顺序来看, 链首页面的驻留时间最长, 链尾页面的驻留时间最短. 当发生一个缺页中断时, 把链首页面淘汰出去, 并把新的页面添加到链表的末尾.
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1baf3839-5dbb-483c-abae-30f4363e365c)
 
-性能较差, 调出的页面有可能是经常要访问的页面. 并且有 belady现象. FIFO算法很少单独使用.
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e3bcfe3-009f-495b-9779-be502be32c98)
 
 ### 最近最久未使用算法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c26f9227-6bc8-4fe4-b4be-0b7dc65de53e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/695e459c-ccab-477c-93fc-43c30c7e6365)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9f3669b4-e9d4-4a74-ad0a-711b06e15dad)
 
 LRU(Least Recently Used)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7e348c67-89cd-4767-b5d7-790cb664b8d0)
 
-基本思路 : 当一个缺页中断发生时, 选择最久未使用的那个页面, 并淘汰.
-
-它是对最优页面置换算法的一个近似, 其依据是程序的局部性原理, 即在最近一小段时间(最近几条指令)内, 如果某些页面被频繁地访问, 那么再将来的一小段时间内, 他们还可能会再一次被频繁地访问. 反过来说, 如果过去某些页面长时间未被访问, 那么在将来它们还可能会长时间地得不到访问.
-
-LRU算法需要记录各个页面使用时间的先后顺序, 开销比较大.
-
-两种可能的实现方法是 :
-
--   系统维护一个页面链表, 最近刚刚使用过的页面作为首节点, 最久未使用的作为尾结点. 再一次访问内存时, 找出相应的页面, 把它从链表中摘下来, 再移动到链表首. 每次缺页中断发生时, 淘汰链表末尾的页面.
--   设置一个活动页面栈, 当访问某页时, 将此页号压入栈顶, 然后, 考察栈内是否有与此页面相同的页号, 若有则抽出. 当需要淘汰一个页面时, 总是选择栈底的页面, 它就是最久未使用的.
+不管使用以上那种算法，每次访问一个页面时都需要查找链表或堆栈中是否已经存在，这些开销是非常大的。操作系统要尽可能的高效，同时耗时也要尽可能的少（简洁）。**LRU算法确实达到了较好的效果，但是比较耗时，不方便在操作系统中实现**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a30a1081-288a-4282-9fa3-409699a245a9)
 
 ### 时钟页面置换算法
+Clock页面置换算法，LRU的近似，对FIFO的一种改进
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/878bac0b-8aa8-4eaa-8a6d-a0a76a4ae756)
 
-基本思路 :
-
-需要用到页表项的访问位, 当一个页面被装入内存时, 把该位初始化为0. 然后如果这个页面被访问, 则把该位置设为1;
-
-把各个页面组织成环形链表(类似钟表面), 把指针指向最老的页面(最先进来);
-
-当发生一个缺页中断时, 考察指针所指向的最老页面, 若它的访问位为0, 立即淘汰; 若访问位为0, 然后指针往下移动一格. 如此下去, 直到找到被淘汰的页面, 然后把指针移动到下一格.
-
+需要用到页表项的访问位, 当一个页面被装入内存时, 把该位初始化为0. 然后如果这个页面被访问, 则把该位置设为1;这个置1的过程是由硬件来完成的，当然软件也可以主动的完成置1和置0的操作。
 流程 :
-
 如果访问页在物理内存中, 访问位置1.
-
 如果不在物理页, 从指针当前指向的物理页开始, 如果访问位0, 替换当前页, 指针指向下一个物理页; 如果访问位为1, 置零以后访问下一个物理页再进行判断. 如果所有物理页的访问位都被清零了, 又回到了第一次指针所指向的物理页进行替换.
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1f6cf432-5db0-4144-ac47-39091b5467f0)
+
 
 ### 二次机会算法
 
