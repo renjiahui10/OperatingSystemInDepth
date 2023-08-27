@@ -82,20 +82,15 @@ Clock页面置换算法，LRU的近似，对FIFO的一种改进
 
 
 ### 二次机会算法
+页表项的flag位：resident bit（存在位） accessed bit（used bit——访问位）  dirty bit（有过写操作）
+当应用程序对某个页访问之后，如果是写操作，硬件会将used_bit和dirty_bit都置1，如果是读操作，硬件仅会将used_bit置1
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a2ba8cf8-eff1-42d9-ac9b-9cbcd775490a)
 
 因为考虑到时钟页面置换算法, 有时候会把一些 dirty bit 为1(有过写操作)的页面进行置换, 这样的话, 代价会比较大. 因此, 可以结合访问位和脏位一起来决定应该置换哪一页.
+这样会使得经过读操作的页面可以经过多次时钟头的扫描，也就是说, 替换的优先级, 没有读写也没写过, 那么直接走, 如果写过或者访问过, 那么给你一次机会, 如果又写过, 又访问过, 那么久给你两次机会.使得被写过的页被替换出去的概率减少，减少了访问硬盘的时间。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/51d582db-0bb8-4a22-8978-348a88456209)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dec8588e-664d-4a93-aed3-1c9bc28a8a1d)
 
-used   dirty     →  used   dirty
-
- 0         0                  replace
-
- 0         1                  0         0
-
- 1          0                 0         0 
-
- 1          1                 0         1 
-
-相当于说, 替换的优先级, 没有读写也没写过, 那么直接走, 如果写过或者访问过, 那么给你一次机会, 如果又写过, 又访问过, 那么久给你两次机会.
 
 ### 最不常用算法
 
