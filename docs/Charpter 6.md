@@ -1,8 +1,11 @@
 # 深入理解操作系统 第六章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f1796830-c6f2-4d49-addf-523ab04fccc6)
+
 
 >   第六章的主要内容是：操作系统的虚拟内存管理技术中的页面置换算法
 
 ## 功能与目标
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e3fb048-9251-44e4-b232-43aa8f1207de)
 
 功能 : 当缺页中断发生, 需要调入新的页面而内存已满时, 选择内存当中哪个物理页面被置换.
 
@@ -15,6 +18,7 @@
 实例 :
 
 记录一个进程对页访问的一个轨迹
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b2fcc9f0-800d-4f3d-ae9a-3648443fad4a)
 
 -   举例 : 虚拟地址跟踪(页号, 偏移)...
     -   (3,0) (1,9) (4,1) (2,1) (5,3) (2,0) ...
@@ -28,6 +32,7 @@
 ## 局部页面置换算法
 
 ### 最优页面置换算法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4c310aa3-eb6c-4b96-a658-9384279f60e6)
 
 基本思路 : 当一个缺页中断发生时, 对于保存在内存当中的每一个逻辑页面, 计算在它的下一次访问之前, 还需等待多长时间, 从中选择等待时间最长的那个, 作为被置换的页面.
 
