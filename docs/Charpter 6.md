@@ -70,6 +70,15 @@ Clock页面置换算法，LRU的近似，对FIFO的一种改进
 如果访问页在物理内存中, 访问位置1.
 如果不在物理页, 从指针当前指向的物理页开始, 如果访问位0, 替换当前页, 指针指向下一个物理页; 如果访问位为1, 置零以后访问下一个物理页再进行判断. 如果所有物理页的访问位都被清零了, 又回到了第一次指针所指向的物理页进行替换.
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1f6cf432-5db0-4144-ac47-39091b5467f0)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/683a1b6a-7255-4577-b888-4b7900f74b87)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4677f7fa-a493-4e14-96fb-bf3ec5db14e6)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2fa47422-1e18-404f-abaf-deda56da34ac)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/96137597-bab3-4d10-a58c-cb1ed562937b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b947cbb4-a4be-449d-b0e3-67d3026a71a6)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/60bef8e8-870f-4c8e-8fc9-d55331be0f51)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4a7595f2-7012-427c-a411-781fcf5bbd81)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2bd497c9-3305-43f9-9ae3-a84da684985e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6b4c44c1-babb-41db-8623-993ee1696fea)
 
 
 ### 二次机会算法
