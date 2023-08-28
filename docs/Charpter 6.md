@@ -1,4 +1,4 @@
- 1# 深入理解操作系统 第六章
+ # 深入理解操作系统 第六章
  很好的一个帖子（https://blog.csdn.net/lililuni/article/details/83685463）
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f1796830-c6f2-4d49-addf-523ab04fccc6)
 
