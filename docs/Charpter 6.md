@@ -1,4 +1,5 @@
-1# 深入理解操作系统 第六章
+ 1# 深入理解操作系统 第六章
+ 很好的一个帖子（https://blog.csdn.net/lililuni/article/details/83685463）
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f1796830-c6f2-4d49-addf-523ab04fccc6)
 
 
@@ -95,12 +96,10 @@ Clock页面置换算法，LRU的近似，对FIFO的一种改进
 ### 最不常用算法
 
 Least Frequently used, LFU
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/65586ca3-f376-4686-a9f3-b67f6929e952)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f4c7b0c8-5a9d-41b2-ad8f-74d0a28d8a0d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e54f504c-1a30-4ecd-b118-7ec0ec3d0d97)
 
-基本思路 : 当一个缺页中断发生时, 选择访问次数最少的那个页面, 并淘汰.
-
-实现方法 : 对每一个页面设置一个访问计数器, 每当一个页面被访问时, 该页面的访问计数器加1. 当发生缺页中断时, 淘汰计数值最小的那个页面.
-
-LRU和LFU的对比 : LRU考察的是多久未访问, 时间越短越好. 而LFU考察的是访问的次数和频度, 访问次数越多越好.
 
 ### Belady现象(科学家名字)
 
