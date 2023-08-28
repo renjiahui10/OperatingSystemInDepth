@@ -135,10 +135,15 @@ Least Frequently used, LFU
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6af4c970-3561-4e71-99e2-e84618aef9b0)
 
 ### 工作集页置换算法
-
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5fea7d83-3ef9-4c7f-95c3-d3c5f88573f1)
+如果每个进程都使用如上的页面置换算法，那么当一个进程在某个时刻局部性较好时，就会空闲出更多物理页帧，方便其他进程使用。
 当工作集窗口在滑动过程中, 如果页面不在集合中, 那么就会直接丢失这个不在窗口中页面, 而不会等待缺页中断再丢弃.
 
 ### 缺页率置换算法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9e581d29-d47b-4329-9641-7e821a75715a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fec24af4-5456-463c-80cb-c51fe652a87f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ba3db580-e195-4dc9-b90b-3253003d4a61)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/50ee3442-77fe-4932-a944-bfe296ce6af5)
 
 可变分配策略 : 常驻集大小可变. 例如 : 每个进程在刚开始运行的时候, 先根据程序大小给它分配一定数目的物理页面, 然后在进程运行过程中, 再动态地调整常驻集的大小.
 
