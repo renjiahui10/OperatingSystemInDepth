@@ -29,6 +29,9 @@
 模拟一个页面置换的行为并且记录产生页缺失数的数量
 
 -   更少的缺失, 更好的性能
+## 页面置换算法的分类
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/54d7b4d6-6f13-47c9-b848-80f5a7e34548)
+
 
 ## 局部页面置换算法
 
@@ -102,49 +105,34 @@ Least Frequently used, LFU
 
 
 ### Belady现象(科学家名字)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/28d0bca2-9be5-48ec-ac1e-ff32eec597f6)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7c002473-291d-4375-9fb3-e31ba418e071)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f919bdcc-53f7-4e3b-8148-0604bedd8ef4)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/83afcf29-f492-4b76-bf1b-3d2c300e6442)
 
-在采用FIFO算法时, 有时会出现分配的物理页面数增加, 缺页率反而提高的异常现象;
-
-出现原因 : FIFO算法的置换特征与进程访问内存的动态特征是矛盾的, 与置换算法的目标是不一致的(即替换较少使用的页面), 因此, 被他置换出去的页面不一定是进程不会访问的.
 
 ### LRU / FIFO 和 Clock 的比较
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/83f94442-fea0-496e-a529-eb9a6c14bacc)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7932c61a-24ce-4049-8261-914ced4616c5)
 
-LRU和FIFO都是先进先出的思路, 只不过LRU是针对页面最近访问时间来进行排序, 所以需要在每一次页面访问的时候动态地调整各个页面之间的先后顺序(有一个页面的最近访问时间变了). 而FIFO是针对页面进入内存的时间来进行排序, 这个时间是固定不变的, 所以各个页面之间的先后顺序是固定的. 如果一个页面在进入内存后没有被访问, 那么它的最近访问时间就是它进入内存的时间. 换句话说, 如果内存当中的所有页面都未曾访问过, 那么LRU算法就退化为了FIFO算法.
-
-例如 : 给进程分配3个物理页面, 逻辑页面的访问顺序是 : 1,2,3,4,5,6,1,2,3 ...
 
 ## 全局页面置换算法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4e4938f3-5527-4218-beda-029e5b01995d)
+局部页面置换算法都假定为每个程序分配固定的物理页帧，然而程序在运行过程中，需要的物理页帧的数量是不断变化的，程序运行刚开始可能需要很多物理页帧，但是随后该程序不需要了那么多物理页帧了，如果继续为该程序分配固定数量的物理页帧的话会影响操作系统的性能。而全局页面置换算法可以动态地调整为每个进程分配的物理页帧的数量。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6ef836c2-d9f1-4113-8fa0-0b9ea6778aca)
 
 ### 工作集模型
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/22d3bbfe-21f3-4be0-b1cf-b7b4600e6dc5)
 
-前面介绍的各种页面置换算法, 都是基于一个前提, 即程序的局部性原理. 但是此原理是否成立?
-
--   如果局部性原理不成立, 那么各种页面置换算法就没有说明分别, 也没有什么意义. 例如 : 假设进程对逻辑页面的访问顺序是1,2,3,4,5,6,6,7,8,9..., 即单调递增, 那么在物理页面数有限的前提下, 不管采用何种置换算法, 每次的页面访问都必然导致缺页中断.
--   如果局部性原理是成立的, 那么如何来证明它的存在, 如何来对它进行定量地分析? 这就是工作集模型.
 
 ### 工作集
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f9d4529b-17a2-42c3-89af-e849c9ebc256)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7d323e12-70fe-4a4a-ae46-45e8d9fbe4a7)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8c73a000-67f2-47ae-bd7e-ab72cbe4f567)
 
-工作集 : 一个进程当前正在使用的逻辑页面集合.
-
-可以使用一个二元函数 W(t, delta) 来表示 :
-
-t 是当前的执行时刻;
-
-delta 称为工作集窗口, 即一个定长的页面访问的时间窗口;
-
-W(t, delta) = 在当前时刻 t 之前的 delta 时间窗口当中的所有页面所组成的集合(随着 t 的变化, 该集合也在不断的变化)
-
-|W(t, delta)| 是工作集的大小, 即逻辑页的数量.
-
-工作集大小的变化 : 进程开始执行后, 随着访问新页面逐步建立较稳定的工作集. 当内存访问的局部性区域的位置大致稳定时, 工作集大小也大致稳定; 局部性区域的位置改变时, 工作集快速扩张和收缩过渡到下一个稳定值.
 
 ### 常驻集
-
-常驻集是指在当前时刻, 进程实际驻留在内存当中的页面集合.
-
--   工作集是进程在运行过程中固有的性质, 而常驻集取决于系统分配给进程的物理页面数目, 以及所采用的页面置换算法;
--   如果一个进程的整个工作集都在内存当中, 即常驻集 包含 工作集, 那么进程将很顺利地运行, 而不会造成太多的缺页中断(直到工作集发生剧烈变动, 从而过渡到另一个状态);
--   当进程常驻集的大小达到某个数目之后, 再给它分配更多的物理页面, 缺页率也不会明显下降.
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6af4c970-3561-4e71-99e2-e84618aef9b0)
 
 ### 工作集页置换算法
 
