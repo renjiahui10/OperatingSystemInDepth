@@ -144,6 +144,7 @@ Least Frequently used, LFU
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fec24af4-5456-463c-80cb-c51fe652a87f)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ba3db580-e195-4dc9-b90b-3253003d4a61)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/50ee3442-77fe-4932-a944-bfe296ce6af5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2e857d02-86b1-4557-a250-9192d5ff52d6)
 
 可变分配策略 : 常驻集大小可变. 例如 : 每个进程在刚开始运行的时候, 先根据程序大小给它分配一定数目的物理页面, 然后在进程运行过程中, 再动态地调整常驻集的大小.
 
@@ -156,6 +157,10 @@ Least Frequently used, LFU
 影响因素 : 页面置换算法, 分配给进程的物理页面数目, 页面本身的大小, 程序的编写方法.
 
 ### 抖动问题
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0f5df370-8ca0-4ed1-847a-8ce37bda6d8d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2199a9ea-5de0-46bb-a3d3-0e10ec4968b7)
+上图中，横轴代表多道程序，纵轴代表CPU使用率，当程序运行较少时，CPU有空闲，所以CPU利用率低，当程序运行较多时，内存不够，页面短缺中断频率高，CPU把太多时间花在页面调入调出上（访问硬盘上），CPU的利用率也比较低。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ea966f46-1ed4-4196-bf0b-d43b95fac72b)
+右侧的蓝色线代表MTBF/PFST的比值，PFST的值是不变的，最理想的情况是希望MTBF/PFST的值能尽可能地接近1.
+**当然上图只是大致估计，例如当一个程序特别大的时候，即使内存中只有一个程序也会产生大量的缺页中断**
 
--   如果分配给一个进程的物理页面太少, 不能包含整个的工作集, 即常驻集 属于 工作集, 那么进程将会造成很多的缺页中断, 需要频繁的在内存与外存之间替换页面, 从而使进程的运行速度变得很慢, 我们把这种状态称为 "抖动".
--   产生抖动的原因 : 随着驻留内存的进程数目增加, 分配给每个进程的物理页面数不断就减小, 缺页率不断上升. 所以OS要选择一个适当的进程数目和进程需要的帧数, 以便在并发水平和缺页率之间达到一个平衡.
