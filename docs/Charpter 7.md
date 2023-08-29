@@ -1,22 +1,26 @@
 # 深入理解操作系统 第七章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/93f4952a-9b45-454f-b759-c36d48b8296a)
+
 
 >   第七章的主要内容是：进程
 
 ## 进程(process)描述
 
-### 进程定义
+进程的描述属于进程的静态描述部分，进程的状态是进程的动态表述部分
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/952549ae-8c0c-4173-a153-624d1c95d220)
 
-进程 : 一个具有一定独立功能的程序在一个数据集合上的一次动态执行过程.
+### 进程定义
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b39dac29-580f-4e5e-815f-79689daaf269)
+
+程序是静态的，程序跑起来才是一个进程（process），
 
 ### 进程的组成
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/82954859-1fbf-45cf-a670-e520c5d7d522)
 
-进程包括 :
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/55054787-1c98-4c22-ab07-0b46d00baa6c)
 
--   程序的代码
--   程序处理的数据
--   程序计数器中的值, 指示下一条将运行的指令
--   一组通用的寄存器的当前值, 堆, 栈
--   一组系统资源(如打开的文件)
+上图中通过调用关系，一个进程可以包括多个程序是因为，一个进程代表要完成一个特定功能，而某个特定的功能是由多个程序协同完成的
+
 
 进程和程序的联系 :
 
