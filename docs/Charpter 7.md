@@ -214,10 +214,12 @@ Blocked → Ready  : 当进程要等待某事件到来时, 它从阻塞状态变
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9335ffa0-ae33-45ce-b708-a02c53bb31cf)
 
 ### 为什么使用线程?
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1a80bedb-efc6-4560-b9a3-e7bfeca0cc36)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9c190218-309f-4e82-9874-9385e8b3e4b8)
 
-实例 : 编写一个MP3播放软件.
+问题: 播放出来的声音能否连贯? 各个函数之间不是并发执行, 影响资源的使用效率.
+由于函数Read()会访问硬盘，速度较慢，播放出的声音可能是断断续续的。
 
-核心功能 : (1)从MP3音频文件中读取数据; (2)对数据进行解压缩; (3)把解压缩后的音频数据播放出来.
 
 ```cpp
 //单进程方式
@@ -228,6 +230,9 @@ while(1){
 }
 //问题: 播放出来的声音能否连贯? 各个函数之间不是并发执行, 影响资源的使用效率.
 ```
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a5170eae-3bbe-4297-9475-d3ebc74207e0)
+
+上图中使用多进程的方式，可能会解决以上问题（例如先多执行几次Read()函数，然后再去执行Decompress()函数），但是又引出了新的问题（上图中下方小字部分）
 
 ```cpp
 //多进程
@@ -246,12 +251,10 @@ while(1){
 //问题: 进程之间如何通信,共享数据?另外,维护进程的系统开销较大:
 //创建进程时,分配资源,建立PCB;撤销进程时,回收资源,撤销PCB;进程切换时,保存当前进程的状态信息
 ```
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c499be7a-fcc3-4b4f-aafd-dea41e1c7ac1)
 
-因此需要提出一种新的实体, 满足以下特征:
 
-1.  实体之间可以并发执行;
-2.  实体之间共享相同的地址空间.
-
+（而进程之间是不共享相同的地址空间的，进程A想访问进程B的地址空间，需要操作系统做一次进程之间的通信）
 这实体就是线程.
 
 ### 什么是线程
