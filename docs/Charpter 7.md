@@ -208,7 +208,10 @@ Blocked → Ready  : 当进程要等待某事件到来时, 它从阻塞状态变
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cd3def44-d8a2-4805-b5c7-06bbc1b9163e)
 
 （**个人想法：进程挂起和虚拟内存管理技术的区别，虚拟内存管理是将某个程序的一部分调入内存中运行，其余部分留下，等有需要的时候在调入内存，此时仍然存放在内存中的部分程序是死的，而进程挂起是将虚拟内存管理技术中放入内存中的那部分程序暂时放置在内存中，不仅程序还包括了进程控制块（PBC),他们都暂时放入了内存呢中。**）
+
+
 ## 线程(thread)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9335ffa0-ae33-45ce-b708-a02c53bb31cf)
 
 ### 为什么使用线程?
 
