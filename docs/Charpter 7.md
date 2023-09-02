@@ -400,6 +400,8 @@ code、data、files多个线程之间共享，每个线程有各自独立的regi
 exec()把新程序调入内存中，用新程序来重写当前进程（也就是新创建的子进程），当fork()和exec()执行完毕，就有两个进程存在了，并且新进程已经变成新的程序在运行了。
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5c929556-2f38-49aa-9146-cd9f9be46592)
 
+上图中的exec("program",argc,arg0,arg1)里的“program”指可执行文件
+
 上图中fork()系统调用函数返回时，就已经存在了两个进程（此时两个进程对应的程序也是一样的），这两个进程的PC(指令寄存器，程序计数器）都是指向fork()函数的下一行指令的（也就是if（pid==0）。然后两个一起往下执行，子进程中fork()的返回值pid为0，所以会执行exec()函数，将子进程改写成需要的进程。这样新进程创建完毕。父进程会跳过上述红色字体部分继续执行下面程序。
 fork() 创建一个继承的子进程
  - 复制父进程的所有变量和内存
@@ -411,8 +413,22 @@ fork的返回值
  - fork()可方便后续使用，子进程可使用getpid获取PID
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4dd6952f-ac26-4995-a04f-c00157b15a43)
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4806e898-7413-4025-bb47-691934a09b91)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/de15b6e1-3b18-4fd3-9482-bf2a449eecf3)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/24378f46-f88d-4c93-9b4c-a07b922ad26a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/269d8ddd-b1e0-46d6-aa4c-506d3a6d8c2d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/bff27248-0130-48be-945d-704228d62e26)
 
-### 加载和执行进程
+下图中的fork()函数执行了几次
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a80676d9-150c-4d9f-89cd-fe4289096783)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1d8f2e19-00aa-4503-8e71-b9a73135b71e)
+
+故fork()函数共执行了7次，形成了最终共有八个子进程，上图中可以看到进程ID+1的顺序变化了，这是因为进程的调度问题，导致先创建了第三代的子进程1169，再去创建第二代的子进程1170.
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/51baf235-a4b7-41af-8cfd-743d14dd9465)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/847e741a-b87b-46c9-9fd5-35200294efa1)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7de09c0b-a45b-436a-b845-1ba4bb06c9fa)
 
 fork()的简单实现
 
@@ -433,6 +449,10 @@ vfork()
 -   一些时候称为轻量级fork()
 -   子进程应该几乎立即调用exec()
 -   现在不再使用如果我们使用 copy on write 技术
+
+### 加载和执行进程
+
+
 
 
 系统调用exec()加载程序取代当前运行的进程
