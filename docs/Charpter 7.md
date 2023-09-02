@@ -1,4 +1,4 @@
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/53540477-2889-4d89-b998-70193f993c38) # 深入理解操作系统 第七章
+ # 深入理解操作系统 第七章
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/93f4952a-9b45-454f-b759-c36d48b8296a)
 
 
@@ -388,6 +388,7 @@ code、data、files多个线程之间共享，每个线程有各自独立的regi
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cefca48a-0a59-44c4-9b72-c76653f73dec)
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0be215f5-03b7-44fb-bc6d-1e48bda4e1c3)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/53540477-2889-4d89-b998-70193f993c38)
 
 ## 进程控制
 
