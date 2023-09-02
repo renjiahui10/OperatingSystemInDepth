@@ -452,6 +452,7 @@ vfork()
 
 ### 加载和执行进程
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dbd38ade-05e6-4618-a228-c9f2545af15f)
 
 
 
