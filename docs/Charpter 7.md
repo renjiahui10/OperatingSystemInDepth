@@ -454,7 +454,9 @@ vfork()
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dbd38ade-05e6-4618-a228-c9f2545af15f)
 
+上图中，在子进程中，开始从红色的两行代码开始执行，但是执行完exec()函数以后，由于子进程中的代码已经被“calc“覆盖了，所以也就不再继续执行红色的第二行程序了。
 
+fork()函数执行失败时，返回一个负数。执行成功时父进程返回子进程ID，子进程返回0.
 
 系统调用exec()加载程序取代当前运行的进程
 
@@ -477,10 +479,48 @@ if(pid == 0) {    //子进程
 	child_status = wait(pid);
 }
 ```
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/38d3f29d-abd1-4905-971b-bfd2c4b56384)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e6c9bae7-6d74-4b5d-8e1e-9992a8891b00)
+
+上图是执行exec()的结果。
+
+**用户空间和内核空间变化情况**
+原来的情况：
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cee5b97e-aba0-4755-9579-71410562d64e)
+
+执行完fork()以后：
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8b68fd20-42c7-426b-99c8-eeda3effd42c)
+
+执行完exec()函数以后：
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/157fe1a5-a941-462b-a4f0-23356a9062d3)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f5af8dc2-6bb3-490c-a4dc-fc7ed5ee4349)
+
+copy on write(COW):写的时候再复制（执行复制时，先不复制，而是让他们同时指向一片内存区域，等他们其中一方进行写操作，改变这片内存区域的内容时，再考虑把这片区域复制以下）
+当fork()函数采用COW技术时，父进程给子进程复制地址空间的时候，并没有全部复制给子进程，而只复制了指向父进程地址空间所需要的原数据（页表），他们指向同一块一直空间（也就是说父进程和子进程指向了同一块地址空间），当父进程或子进程在对共同指向的地址空间写的时候会触发一个异常，这个时候才对需要写的这个页进行复制，使父进程和子进程分别指向不同的页。
+
+
+
+
+
 
 ### 等待和终止进程
 
-wait()系统调用是被父进程用来等待子进程的结束
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e11cd9ba-5962-4520-a679-6be528a5d481)
+
+
+wait()系统调用是被父进程用来等待子进程的结束，但是子进程运行结束以后直接调用exit()退出不就可以了吗，为什么要让父进程等子进程呢？
+答：当一个进程执行完毕后，执行exit()系统调用，表明该进程执行完毕要退出了，那么执行完退出时，操作系统会根据情况将该进程占用的内存空间和文件资源（打开的文件等）释放和关闭。但是不会回收掉内核中的PCB（代表进程存在的唯一标识），也就是说执行exit()系统调用了，用户态的资源回收了，但是内核态的资源还没有回收（无法回收的原因：自己没办法拎起自己的头），而内核态资源PCB是通过父进程的wait()系统调用来实现的。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/35c37e64-5019-4280-9256-f505a9f16d42)
+这里所说的僵尸进程是指释放了用户态资源但是还没有释放内核态资源的子进程（再exit()执行完毕，而父进程的wait()还没有执行完毕）。
+
+如果子进程结束之前，父进程已经死亡，是不是这个子进程的内核态资源就没法回收了呢？
+答：进程之间都有父子关系，最原始的根进程（init process）会定期扫描PCB序列，查看是否存在僵尸进程，然后代替其父进程释放它的内核态资源（其PCB）
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3fdeebc5-27a8-4eab-b05e-3eb81a17475e)
+
+exec()执行时，进程需要处于running态，由于系统调用加载新程序，此时进程可能从running态转变成blocked态。
+
+
 
 -   一个子进程向父进程返回一个值,所以父进程必须接受这个值并处理
 -   wait()系统调用担任这个要求
