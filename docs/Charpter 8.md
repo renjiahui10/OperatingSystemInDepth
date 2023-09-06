@@ -1,8 +1,13 @@
 # 深入理解操作系统 第八章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fe4feee7-c256-42ee-b728-09debc67ea7d)
 
 >   第八章的主要内容是：调度算法(感觉清华这门课程前几章比较精彩,后续讲的有点混乱)
 
 ## 背景
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3c7129cb-c934-4701-82b7-4442c2756fe1)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3abf7b4e-440d-4091-a08a-3b33a4a23eed)
+
+上图答：主要和running态相关的状态转换，例如：运行态到就绪态、就绪态到运行态和运行态到阻塞态等
 
 ### 上下文切换
 
@@ -20,18 +25,24 @@
 
 -   一个进程从运行状态切换到等待状态
 -   一个进程被终结
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e82b79d-9483-4e4e-84a1-74b0160b74cd)
 
-### 不可抢占
+用户级的调度策略
+1.不可抢占
 
 -   调度程序必须等待事件结束
 
-### 可以抢占
+2.可以抢占
 
 -   调度程序在中断被相应后执行
 -   当前的进程从运行切换到就绪, 或者一个进程从等待切换到就绪
 -   当前运行的进程可以被换出
 
+内核级的调度策略
+当一个进程执行系统调用，此时CPU交由操作系统控制，当系统调用返回时，如果还是原进程称为内核级不可抢占。如果以为某些事件的发生，进程可以切换成其他进程，系统调用返回时不再时原进程，称为内核级可以抢占。
+
 ## 调度原则
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/594eeee0-69e8-4c6f-ae99-14f17c154eb4)
 
 -   调度策略
 
