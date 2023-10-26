@@ -24,27 +24,19 @@
 -   什么时候进行调度?
 
 ### 内核运行调度程序的条件(满足一条即可)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/76f9016e-3e8a-475a-a7eb-95df339f58ec)
 
--   一个进程从运行状态切换到等待状态
--   一个进程被终结
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e82b79d-9483-4e4e-84a1-74b0160b74cd)
-
-用户级的调度策略
-1.不可抢占
-
--   调度程序必须等待事件结束
-
-2.可以抢占
-
--   调度程序在中断被相应后执行
--   当前的进程从运行切换到就绪, 或者一个进程从等待切换到就绪
--   当前运行的进程可以被换出
-
-内核级的调度策略
+**内核级的调度策略**
 当一个进程执行系统调用，此时CPU交由操作系统控制，当系统调用返回时，如果还是原进程称为内核级不可抢占。如果以为某些事件的发生，进程可以切换成其他进程，系统调用返回时不再时原进程，称为内核级可以抢占。
 
-## 调度原则
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/594eeee0-69e8-4c6f-ae99-14f17c154eb4)
+## 调度准则
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9df76a5a-e888-40f9-93f7-6e043c78c835)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4767e723-d3d3-4f7a-b2f5-973b977a51d2)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5d4c8622-0701-4bd0-901f-90089336b1ea)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9c6d3233-4ed4-469c-bcfa-0f2f1e835e75)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/811f5698-6bd6-45b8-ae8e-558034264fa5)
+
+从上面的折线图中可以看到，大部分的CPU计算时间在8ms以内，所以要选择合适的时间片基本单位
 
 -   调度策略
 
