@@ -1,5 +1,6 @@
 # 深入理解操作系统 第八章
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fe4feee7-c256-42ee-b728-09debc67ea7d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/79636134-e265-4770-90e3-5a609064717e)
+
 
 >   第八章的主要内容是：调度算法(感觉清华这门课程前几章比较精彩,后续讲的有点混乱)
 
@@ -8,6 +9,7 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3abf7b4e-440d-4091-a08a-3b33a4a23eed)
 
 上图答：主要和running态相关的状态转换，例如：运行态到就绪态、就绪态到运行态和运行态到阻塞态等
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4ea066f5-470f-441c-a368-2c0e91458441)
 
 ### 上下文切换
 
