@@ -75,6 +75,11 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ca2a85a1-bcfe-4557-8012-8aeed1290c50)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c8242aeb-9499-43af-990c-e7893f64621a)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b2791d3b-fb23-4b06-9c13-969b9d7999f5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3ff083e6-a964-416c-8edc-3460becd3885)
+
+目前系统大概10ms一个时间片，上面的时间片轮转算法结合了时间片和先来先服务
+
+上面的算法结合了时间片轮转算法和先来先服务算法，
 
 
 -   **FCFS(先来先服务)**
