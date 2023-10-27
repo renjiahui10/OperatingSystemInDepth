@@ -33,76 +33,49 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9df76a5a-e888-40f9-93f7-6e043c78c835)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4767e723-d3d3-4f7a-b2f5-973b977a51d2)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5d4c8622-0701-4bd0-901f-90089336b1ea)
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9c6d3233-4ed4-469c-bcfa-0f2f1e835e75)
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/811f5698-6bd6-45b8-ae8e-558034264fa5)
 
 从上面的折线图中可以看到，大部分的CPU计算时间在8ms以内，所以要选择合适的时间片基本单位
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9c6d3233-4ed4-469c-bcfa-0f2f1e835e75)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/811f5698-6bd6-45b8-ae8e-558034264fa5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/86efb49a-4eb8-4167-a65d-4e0ab73a815b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dfacb40f-69ec-4d73-9f06-505b3281d59e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ad7f870d-4a00-4ef3-afe8-9e82071aae0b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/76ac8885-6303-47c2-ab9e-c11070cdd1a3)
+**评价指标**
+-CPU使用率: CPU处于忙状态所占时间的百分比
 
--   调度策略
+-吞吐量: 在单位时间内完成的进程数量
 
-    人们通常都需要"更快"的服务
+-周转时间: 一个进程从初始化到结束,包括所有等待时间所花费的时间
 
-    什么是更快?
+-等待时间: 进程在就绪队列中的总时间
 
-    -   传输文件时的高带宽
-    -   玩游戏时的低延迟
-    -   这两个因素是独立的
+-响应时间: 从一个请求被提交到产生第一次相应所花费的总时间
 
-    和水管类比
+各指标在操作系统上的表现:
 
-    -   低延迟: 喝水的时候想要一打开水龙头水就流出来
-    -   高带宽: 给游泳池充水时希望从水龙头里同时流出大量的水,并且不介意是否存在延迟
+低延迟调度增加了交互式表现(如果移动了鼠标,但是屏幕中的光标却没动,我们可能会重启电脑)
 
-    我们的目标:
+操作系统需要保证低吞吐量不受影响(我想要结束长时间的编程,所以操作系统必须不时进行调度,即使存在许多交互任务)
 
-    -   减少响应时间: 及时处理用户的输出并且尽快将输出提供给用户
-    -   减少平均响应时间的波动: 在交互系统中,可预测性比高差异性低平均更重要
-    -   增加吞吐量: 减少开销(操作系统开销,上下文切换);系统资源的高效率用(CPU,IO设备)
-    -   减少等待时间: 减少每个进程的等待时间
+吞吐量是操作系统的计算带宽
 
--   程序执行模型
-
-    执行模型 : 程序在CPU突发和IO中交替
-
-    -   每个调度决定都是关于在下一个CPU突发时将哪个工作交给CPU
-    -   在时间分片机制下,线程可能在结束当前CPU突发前被迫放弃CPU
-
--   评价指标
-
-    CPU使用率: CPU处于忙状态所占时间的百分比
-
-    吞吐量: 在单位时间内完成的进程数量
-
-    周转时间: 一个进程从初始化到结束,包括所有等待时间所花费的时间
-
-    等待时间: 进程在就绪队列中的总时间
-
-    响应时间: 从一个请求被提交到产生第一次相应所花费的总时间
-
-    各指标在操作系统上的表现:
-
-    低延迟调度增加了交互式表现(如果移动了鼠标,但是屏幕中的光标却没动,我们可能会重启电脑)
-
-    操作系统需要保证低吞吐量不受影响(我想要结束长时间的编程,所以操作系统必须不时进行调度,即使存在许多交互任务)
-
-    吞吐量是操作系统的计算带宽
-
-    响应时间是操作系统的计算延迟
-
--   公平的目标
-
-    举例:
-
-    -   保证每个进程占用相同的CPU时间
-    -   这公平嘛?如果一个用户比其他用户运行更多的进程怎么办
-
-    举例:
-
-    -   保证每个进程都等待相同的时间
-
-    公平通常会增加平均响应时间
+响应时间是操作系统的计算延迟
 
 ## 调度算法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/493bfdc3-1050-4090-8ad4-7f79ad16862b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/90b4b14b-0ae9-42d2-a060-c8235348479b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/324209d7-69bd-4622-aab8-74bf59cf0503)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b9731918-c0d8-4845-aac4-f400cb01622c)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ed0165bb-a791-405f-8530-9832ae12a0d5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/29521697-c29c-400c-ba9d-e4ac083c2e69)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9dde6c5d-7cb9-43e6-9007-4e731e883460)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ee2bb0cd-0a0b-46ed-b0af-7c07576a9f95)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4813ad2f-dd03-4405-9c97-af3af32de591)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ca2a85a1-bcfe-4557-8012-8aeed1290c50)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c8242aeb-9499-43af-990c-e7893f64621a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b2791d3b-fb23-4b06-9c13-969b9d7999f5)
+
 
 -   **FCFS(先来先服务)**
 
