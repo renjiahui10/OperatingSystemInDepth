@@ -78,10 +78,37 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3ff083e6-a964-416c-8edc-3460becd3885)
 
 目前系统大概10ms一个时间片，上面的时间片轮转算法结合了时间片和先来先服务
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5c4fc848-f1b2-4298-9a6d-024fb70a16f0)
 
-上面的算法结合了时间片轮转算法和先来先服务算法，
+上面的算法结合了时间片轮转算法和先来先服务算法，前台（交互）要求时间片段，后台计算量比较大，可能需要先来先服务算法。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/015e4ecd-f4c1-4070-95ba-2bf0aab3aad7)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7014f086-9194-4179-befb-410e77feb0af)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9e093c84-19ce-44d4-a9d7-b9849016d826)
 
+多级反馈队列是是多级队列的改进，
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e899521-e9cf-451a-b1b9-83ca931a772b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/967a30a1-60a7-4931-b2c4-e4cd175ab889)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/99bbe00b-556e-4615-b7d4-51e56d254e8f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e5e83d36-c075-4799-93b3-97cfd5c6acd4)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/bf7fb207-6c50-4855-a08c-7b3aabe081bc)
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1a543334-872d-441d-84ba-8be2005b3891)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fa9772bc-b3f4-41bc-bcf2-6864c73fa236)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3e62b7b9-6d06-4fd8-a320-1343f2797722)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5a223fcb-a32f-4829-8f85-f31bde146def)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b5494e43-4ea0-4066-b858-ea8ab9bb0838)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6d5831f4-9e3f-4ae5-a4c0-d8a5bad9194a)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2b32f127-ed6f-4376-b748-55828a2ffc3e)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4937548e-b097-4837-86d7-f844aa2175c7)
+
+调度的时机发生在：A程序发生中断或者系统调用，有用户态转变为内核态，执行完中断或系统调用处理以后，有内核态返回用户态时，来执行调度，也就是上图中的步骤2
 -   **FCFS(先来先服务)**
 
     First come, First Served
