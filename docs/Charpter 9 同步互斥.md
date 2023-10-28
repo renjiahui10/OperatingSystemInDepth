@@ -80,6 +80,11 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c9ffa014-6dda-43b3-874d-ab93ab4f1279)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/25363d14-e7a3-4a1d-ab51-e079f3e7aec6)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/26bae3b7-032a-412e-9a79-d4c06bdf1299)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1b570932-7ca8-49ca-bdce-dfcd37281b15)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/31889559-15a8-44fd-af90-5950f9b8ce40)
+
+上述方案即使只有一个进程在操作，也没有办法把面包买回来。
+![Uploading image.png…]()
 
 所谓的原子操作也就是指，一组必须绑定在一起执行的操作，不能中断的只执行一部分一组操作中的一部分而转去执行其他操作。
 假设两个进程并发执行
