@@ -213,6 +213,25 @@
 
 ## 实时调度
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/59b1fc9d-1102-4d1c-9e26-39d3dc865298)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ee9ec5d8-f2d8-48da-a5fd-4e1d39c83762)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/eb5e149f-4c3a-40a1-90a0-cd1a5351b1f1)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/07486c6a-45f1-472c-b02b-63dd0985bb8e)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0b6e85a1-95b7-4b10-8c41-ff960c963614)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5cc0b31a-ce20-4554-8a2b-8de04e1f56af)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e6d36c12-3d04-4a86-aece-a95834b173e3)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1c080f7a-7b2f-4d85-86a2-3c40e932be0a)
+
+
+
+
 -   实时系统
 
     定义: 正确性依赖于其时间和功能两方面的一个操作系统
