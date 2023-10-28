@@ -225,10 +225,6 @@
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5cc0b31a-ce20-4554-8a2b-8de04e1f56af)
 
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e6d36c12-3d04-4a86-aece-a95834b173e3)
-
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1c080f7a-7b2f-4d85-86a2-3c40e932be0a)
-
 
 
 
@@ -263,6 +259,10 @@
     -   执行Deadline最早的任务
 
 ## 多处理器调度
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e6d36c12-3d04-4a86-aece-a95834b173e3)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1c080f7a-7b2f-4d85-86a2-3c40e932be0a)
+
 
 多处理器的CPU调度更复杂:
 
@@ -275,6 +275,11 @@
 -   需要在调度程序中同步
 
 ## 优先级反转
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fe1158f9-0e9a-438c-a91a-366637a55a10)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d1bd3a05-7782-44c0-89f4-ce399160bea2)
+
+上图中，优先级T1>T2>T3,临界区：每个进程中访问临界资源的那段代码称为临界区（Critical Section）（临界 资源是一次仅允许一个进程使用的共享资源）。每次只准许一个进程进入临界区， 进入后不允许其他进程进入。不论是硬件临界资源，还是软件临界资源，多个进程 必须互斥地对它进行访问。（https://blog.51cto.com/yang/2892072）
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1b77532d-8a92-411f-965a-88f2eb6f0ca3)
 
 可以发生在任务基于优先级的可抢占的调度机制中
 
