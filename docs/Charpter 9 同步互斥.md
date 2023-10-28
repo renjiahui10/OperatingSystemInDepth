@@ -2,7 +2,7 @@
 
 >   第九章的主要内容是：同步互斥
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5f9b442c-2088-4436-b926-7e1fdfe7dd25)
-
+https://blog.csdn.net/liming0931/article/details/82902084#:~:text=%E5%90%8C%E6%AD%A5%20%EF%BC%9A%E6%98%AF%E6%8C%87%E6%95%A3%E6%AD%A5%E5%9C%A8%E4%B8%8D%E5%90%8C%E4%BB%BB%E5%8A%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E8%8B%A5%E5%B9%B2%E7%A8%8B%E5%BA%8F%E7%89%87%E6%96%AD%EF%BC%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E8%BF%90%E8%A1%8C%E5%BF%85%E9%A1%BB%E4%B8%A5%E6%A0%BC%E6%8C%89%E7%85%A7%E8%A7%84%E5%AE%9A%E7%9A%84%E6%9F%90%E7%A7%8D%E5%85%88%E5%90%8E%E6%AC%A1%E5%BA%8F%E6%9D%A5%E8%BF%90%E8%A1%8C%EF%BC%8C%E8%BF%99%E7%A7%8D%E5%85%88%E5%90%8E%E6%AC%A1%E5%BA%8F%E4%BE%9D%E8%B5%96%E4%BA%8E%E8%A6%81%E5%AE%8C%E6%88%90%E7%9A%84%E7%89%B9%E5%AE%9A%E7%9A%84%E4%BB%BB%E5%8A%A1%E3%80%82%20%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%9C%BA%E6%99%AF%E5%B0%B1%E6%98%AF%EF%BC%9A%E4%B8%A4%E4%B8%AA%E6%88%96%E4%B8%A4%E4%B8%AA%E4%BB%A5%E4%B8%8A%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%88%96%E7%BA%BF%E7%A8%8B%E5%9C%A8%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8D%8F%E5%90%8C%E6%AD%A5%E8%B0%83%EF%BC%8C%E6%8C%89%E9%A2%84%E5%AE%9A%E7%9A%84%E5%85%88%E5%90%8E%E6%AC%A1%E5%BA%8F%E8%BF%90%E8%A1%8C%E3%80%82%20%E6%AF%94%E5%A6%82%20A,%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E4%BE%9D%E8%B5%96%E4%BA%8E%20B%20%E4%BB%BB%E5%8A%A1%E4%BA%A7%E7%94%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82%20%E6%98%BE%E7%84%B6%EF%BC%8C%E5%90%8C%E6%AD%A5%E6%98%AF%E4%B8%80%E7%A7%8D%E6%9B%B4%E4%B8%BA%E5%A4%8D%E6%9D%82%E7%9A%84%E4%BA%92%E6%96%A5%EF%BC%8C%E8%80%8C%E4%BA%92%E6%96%A5%E6%98%AF%E4%B8%80%E7%A7%8D%E7%89%B9%E6%AE%8A%E7%9A%84%E5%90%8C%E6%AD%A5%E3%80%82%20%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4%E4%BA%92%E6%96%A5%E6%98%AF%E4%B8%A4%E4%B8%AA%E4%BB%BB%E5%8A%A1%E4%B9%8B%E9%97%B4%E4%B8%8D%E5%8F%AF%E4%BB%A5%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%EF%BC%8C%E4%BB%96%E4%BB%AC%E4%BC%9A%E7%9B%B8%E4%BA%92%E6%8E%92%E6%96%A5%EF%BC%8C%E5%BF%85%E9%A1%BB%E7%AD%89%E5%BE%85%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%E8%BF%90%E8%A1%8C%E5%AE%8C%E6%AF%95%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%89%8D%E8%83%BD%E8%BF%90%E8%A1%8C%EF%BC%8C%E8%80%8C%E5%90%8C%E6%AD%A5%E4%B9%9F%E6%98%AF%E4%B8%8D%E8%83%BD%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%EF%BC%8C%E4%BD%86%E4%BB%96%E6%98%AF%E5%BF%85%E9%A1%BB%E8%A6%81%E5%AE%89%E7%85%A7%E6%9F%90%E7%A7%8D%E6%AC%A1%E5%BA%8F%E6%9D%A5%E8%BF%90%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BA%92%E6%96%A5%EF%BC%89%EF%BC%81%20%E5%9B%A0%E6%AD%A4%E4%BA%92%E6%96%A5%E5%85%B7%E6%9C%89%E5%94%AF%E4%B8%80%E6%80%A7%E5%92%8C%E6%8E%92%E5%AE%83%E6%80%A7%EF%BC%8C%E4%BD%86%E4%BA%92%E6%96%A5%E5%B9%B6%E4%B8%8D%E9%99%90%E5%88%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F%EF%BC%8C%E5%8D%B3%E4%BB%BB%E5%8A%A1%E6%98%AF%E6%97%A0%E5%BA%8F%E7%9A%84%EF%BC%8C%E8%80%8C%E5%90%8C%E6%AD%A5%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B9%8B%E9%97%B4%E5%88%99%E6%9C%89%E9%A1%BA%E5%BA%8F%E5%85%B3%E7%B3%BB%E3%80%82
 ## 背景
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/edbfe406-e058-4a46-9470-df2260eb123b)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e21cbad-9b33-447c-a29e-53ed4a63b0ee)
@@ -149,7 +149,7 @@ Atomic Operator(原子操作)
 -   连x++这样的简单语句,实际上是由三条指令构成的
 -   有时候甚至连单条假期指令都不是原子的(Pipeline,super-scalar,out-of-order,pape fault)
 
-临界区(Critical section)是指进程中的一段需要访问共享资源并且当另一个进程处于相应代码区域时便不会被执行的代码区域
+临界区(Critical section)是指进程中的一段需要访问共享资源并且当另一个进程处于相应代码区域时便不会被执行的代码区域（**每个进程中访问临界资源的那段代码称为临界区（Critical Section）**）
 
 互斥(Mutual exclusion)是指当一个 进程处于临界区并访问共享资源时,没有其他进程会处于临界区并且访问任何相同的共享资源
 
@@ -158,6 +158,15 @@ Atomic Operator(原子操作)
 饥饿(Starvation)是指一个可执行的进程,被调度器持续忽略,以至于虽然处于可执行状态却不被执行
 
 ## 临界区
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/09b8c061-4148-4832-9276-380b8434534e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/405e951d-8dd3-44fd-b3f9-5517d6e64dad)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fe5950c7-cca6-455c-9c55-dd6a247ff62b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/336fa979-845d-4030-a91c-69cad1889ea5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0e39d7dc-3b2f-4891-853b-7a7c4de95f82)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/274e2f01-ea9d-40bb-a114-b371b9d2df10)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/13b49cea-41c6-4aba-a3fd-7e0295ae4006)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/853f2a3a-dfa5-47a3-8127-6ba064b00785)
+
 
 互斥: 同一时间临界区中最多存在一个线程
 
