@@ -1,8 +1,13 @@
 # 深入理解操作系统 第九章
 
->   第九章的主要内容是：同步
+>   第九章的主要内容是：同步互斥
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5f9b442c-2088-4436-b926-7e1fdfe7dd25)
 
 ## 背景
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/edbfe406-e058-4a46-9470-df2260eb123b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e21cbad-9b33-447c-a29e-53ed4a63b0ee)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f556298b-f7a1-4455-ae10-f7d00c9bd1fb)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/803e255a-1c55-43ee-aaae-c501c28e9ac2)
 
 第一章到第八章内容, 到目前为止
 
@@ -51,7 +56,32 @@
     -   STORE Reg1 new_pid
     -   INC Reg1
     -   STORE Reg1 next_pid
+ 
+**举例说明**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/127abe81-a32e-4300-a958-9bc1f7d2e29b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/998a17e6-f28c-421d-83b1-2b0507831482)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/43273788-2545-4945-8725-3d9345af8c36)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0ad1ca85-d17f-4efc-88a1-eaa8627a9ffb)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0a9021b8-ed3a-4650-b9fb-f255f52a0287)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8d27a0ed-aaf8-49c8-9b95-634b363cb4ec)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4c166dfd-6be1-4eb9-b5cb-d14ab305320e)
 
+**现实生活中举例**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b8b41266-5811-4add-b9da-541e0b0b5b84)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5be52d60-6958-41fc-9044-0291a053038c)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0bf7dfa0-6d91-4f6a-b86a-f4095fc68d74)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7b46e0fe-3bdb-4fd8-b689-e404da0f12cb)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3e321a07-25be-4825-93c3-19d20b95cbf4)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/84d8a3d8-d0da-4941-b6ee-691b86897595)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ec09002a-5fe6-4d7d-ab73-d2dc7945842f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2d88be61-668e-45be-b9a7-6dd2081cd44a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/de3f8b71-8829-4eba-b0b4-2eeb29625d90)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b4bed24d-539f-466b-aa68-8b581ac6f8eb)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c9ffa014-6dda-43b3-874d-ab93ab4f1279)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/25363d14-e7a3-4a1d-ab51-e079f3e7aec6)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/26bae3b7-032a-412e-9a79-d4c06bdf1299)
+
+所谓的原子操作也就是指，一组必须绑定在一起执行的操作，不能中断的只执行一部分一组操作中的一部分而转去执行其他操作。
 假设两个进程并发执行
 
 -   如果next_pid等于100, 那么其中一个进程得到的ID应该是100, 另一个进程的ID应该是101, next_pid应该增加到102
