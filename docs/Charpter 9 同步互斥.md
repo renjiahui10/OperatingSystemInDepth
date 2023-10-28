@@ -84,7 +84,29 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/31889559-15a8-44fd-af90-5950f9b8ce40)
 
 上述方案即使只有一个进程在操作，也没有办法把面包买回来。
-![Uploading image.png…]()
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1c3120a6-b70f-462e-93e8-4ef64420dc45)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/250c277e-d464-42c8-8366-8d75a0205fdc)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/605f6970-c22b-4592-a519-4370c0c11e14)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/475f6905-5d0b-4ed5-a8aa-c4efffdf554c)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5d8c729a-a9ef-4150-b362-e01003e18488)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/52998574-209a-48a1-a6a5-2900569c9d9b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/562b80b0-beea-4453-bbab-d77500a0071c)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2f5326aa-cc39-4150-bf56-8f655f4a7419)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f2b7fa20-b460-4aa8-bb51-eb0ffdef9171)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/28e3770d-25a2-4095-9917-420f40748f1b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5eb48494-9261-4fdb-9282-58b66040e032)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b7b225b0-61f3-4fcd-8fa6-105ca54d5853)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0aabe29d-b0e5-4162-857e-93f790c0793b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cef92ec6-15b5-40ad-80ca-009709aa98b4)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6bc4d138-287c-4e35-8bbe-02ede5f0a0c9)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4cc45674-5ab6-4d2c-9130-6b398d24787c)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e428b2d-a997-4c8f-a611-a4076466547d)
+
+在操作系统中由于存在资源共享，出现了互斥、死锁、饥饿等现象。
+
+
+
 
 所谓的原子操作也就是指，一组必须绑定在一起执行的操作，不能中断的只执行一部分一组操作中的一部分而转去执行其他操作。
 假设两个进程并发执行
