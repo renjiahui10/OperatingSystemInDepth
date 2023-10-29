@@ -177,7 +177,12 @@ Progress: 如果一个线程想要进入临界区,那么它最终会成功
 无忙等待(可选): 如果一个进程在等待进入临界区,那么在它可以进入之前会被挂起
 
 ## 方法1:禁用硬件中断
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0e2081d1-4582-443a-a58f-82b01ba168d7)
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/238029c8-22d6-41d3-9835-c051fe345fe1)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e1715434-d02c-4ee6-ac22-aa49a5311603)
+
+由于整个系统都停下来为这个程序停下来服务，由于中断也关闭了，如果这个进程此时出现问题，整个系统就崩溃了，cpu的控制权也回不到操作系统中了。
 没有中断,没有上下文切换,因此没有并发
 
 -   硬件将中断处理延迟到中断被启用之后
