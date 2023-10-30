@@ -15,6 +15,9 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7e85d4b6-6c0c-485d-97ac-63d0b18e6d2a)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/60d39b33-5408-44e5-b63c-308dbe160274)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/54c853cd-6360-4208-8973-9f6a10af389d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/95469ad6-c2cf-4487-856a-ad12925e172e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/49012c76-b13c-4e97-9194-28eb872b1a10)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2cdce5a2-0f37-41db-b6ba-0c737726a432)
 
 上述整个P操作和V操作在操作系统的保护下是原子性操作，保证了信号量的正确实施
 信号量的抽象数据类型
