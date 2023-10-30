@@ -15,9 +15,6 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7e85d4b6-6c0c-485d-97ac-63d0b18e6d2a)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/60d39b33-5408-44e5-b63c-308dbe160274)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/54c853cd-6360-4208-8973-9f6a10af389d)
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/95469ad6-c2cf-4487-856a-ad12925e172e)
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/49012c76-b13c-4e97-9194-28eb872b1a10)
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2cdce5a2-0f37-41db-b6ba-0c737726a432)
 
 上述整个P操作和V操作在操作系统的保护下是原子性操作，保证了信号量的正确实施
 信号量的抽象数据类型
@@ -59,6 +56,12 @@ P()能够阻塞,V()不会阻塞
 
 所谓的条件同步是指一个进程的某个模块的运行必须以另外一个进程的某个模块的运行结束为条件。比如说，B进程的X模块是准备数据q，A进程的N模块是处理数据q。
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/565fda46-de51-429f-bed1-ba9f5abd3662)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/95469ad6-c2cf-4487-856a-ad12925e172e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/49012c76-b13c-4e97-9194-28eb872b1a10)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2cdce5a2-0f37-41db-b6ba-0c737726a432)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a118934f-a250-4fdb-abd3-5522cb8f5484)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/23cf9a67-2ac2-40ac-bf73-ccbe62822163)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/68ddce2d-bda9-41e3-9ccf-fae5250a4b21)
 
 1.  用二进制信号量实现的互斥
 
@@ -183,6 +186,16 @@ Semaphore::V(){
 不能够处理死锁问题
 
 ## 管程
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ccc9af49-a781-4524-9776-f70edc7db412)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5ff836e9-6999-4765-a748-d336a0562410)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a50b4d61-fc30-4df1-9578-071493e5d0c0)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f2ae0ba2-162f-4e25-8a32-e79146517394)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d6f7ea9c-171f-4989-b2fc-725a1f23af70)
+
+当条件变量个数是0时，管程退化成临界区
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4062cd2a-d9d2-400c-8751-85ad99843b8d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ff364109-39cc-4397-b16f-7dec40da5ecf)
+
 
 目的: 分离互斥和条件同步的关注
 
