@@ -292,6 +292,9 @@ Bakery算法(1979): 针对n线程的临界区问题解决方案
 硬件提供了一些原语
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f6b91f76-4ea8-4afc-ab14-a6b6e5a4840b)
 
+
+问：多处理器中如何避免多个处理器同时申请锁呢？
+答：https://www.jianshu.com/p/61490effab35
 -   像中断禁用, 原子操作指令等
 -   大多数现代体系结构都这样
 
