@@ -212,8 +212,18 @@ Progress: 如果一个线程想要进入临界区,那么它最终会成功
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fa16c4bd-1a18-4a34-a9a8-87e8ee8532c0)
 
 上图中whlie(turn!=1)；是一个完整代码，表示当turn！=1是空循环；
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/93af7f29-51c6-4291-8d05-6c3f231a08f6)
 
 上图中，当线程Ti在刚刚判断完flag(j)==1之后发生中断，跳转到线程Tj，可能发生两线程同时进入临界区。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7b13a74c-49d7-43cb-8cd9-dfae3aa4d936)
+
+上图中，在线程Ti贴标签表示想进入临界区时，如果发生中断转向线程Tj，线程Tj也贴了标签，此时两个线程就都无法进入临界区了
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6b1e6a10-8cc1-4c41-b622-daec55def071)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8da95c8c-596c-4f5f-8d60-438a50b63435)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dd7bc7f0-d22a-4ba9-8f82-52017ea5e2ac)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d13006c3-2519-4a63-aa67-e66de1a1df1b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/88a75d7e-1b2a-41b1-b133-375ba2cfe8b1)
+
 满足进程Pi和Pj之间互斥的经典的基于软件的解决方法(1981年)
 
 使用两个共享数据项
@@ -266,8 +276,21 @@ Bakery算法(1979): 针对n线程的临界区问题解决方案
 没有硬件保证的情况下无真正的软件解决方案: Perterson算法需要原子的LOAD和STORE指令
 
 ## 方法3:更高级的抽象
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d38be0a3-fd10-4ed3-96da-d7a12193d336)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c4e9f530-7590-4897-bd69-a373f2ee146f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/48d11710-c689-4c38-9c1c-c93136336795)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/24aaa227-51f2-4576-83bd-e6ad4b520e17)
 
+**我的理解：应该是针对某一个临界区有一个锁**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/af12ea7e-356b-43ec-944a-4d8cd8250bec)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/20bff2eb-1554-43a9-9f8e-2d7a4077fdd0)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cbdea8a0-fcf8-4800-9f83-97987811ea3e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8cdea554-ac7e-4b9e-be51-e1eff435d49f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/49b3c91f-743a-4357-aca2-13854af583fc)
+
+之前提到的禁用中断的实现同步互斥的方法只能适合于单处理器，因为多处理器没法一般不使用把全部处理器都中断的方式，只要有一个处理器没用中断，就有可能存在两个处理器同时访问一个临界区。
 硬件提供了一些原语
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f6b91f76-4ea8-4afc-ab14-a6b6e5a4840b)
 
 -   像中断禁用, 原子操作指令等
 -   大多数现代体系结构都这样
