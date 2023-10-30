@@ -195,6 +195,8 @@ Semaphore::V(){
 当条件变量个数是0时，管程退化成临界区
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4062cd2a-d9d2-400c-8751-85ad99843b8d)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ff364109-39cc-4397-b16f-7dec40da5ecf)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/478128a9-a447-473f-8bc2-221387116982)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/87c160a5-af22-45d4-9b1c-6ef12b7e56fa)
 
 
 目的: 分离互斥和条件同步的关注
