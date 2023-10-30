@@ -1,8 +1,20 @@
 # 深入理解操作系统 第十章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9c693a1c-b064-4eef-865f-59fc9526dbb1)
+
 
 >   第十章的主要内容是：信号量和管程
+信号量和管程都是操作系统提供的同步方法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f215e041-3b38-424c-ae33-74c7ae404da7)
+
+信号量和管程都属于高层次的编程抽象方法	
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/861f4402-95de-4937-8052-3646c2bf2d10)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1d7e96b8-36c9-47b6-bffb-d8e62f7f22e8)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9174d339-4707-4549-a23e-ee27e4343f79)
 
 ## 信号量
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7e85d4b6-6c0c-485d-97ac-63d0b18e6d2a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/60d39b33-5408-44e5-b63c-308dbe160274)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/54c853cd-6360-4208-8973-9f6a10af389d)
 
 信号量的抽象数据类型
 
