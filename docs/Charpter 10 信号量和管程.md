@@ -62,7 +62,7 @@ P()能够阻塞,V()不会阻塞
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a118934f-a250-4fdb-abd3-5522cb8f5484)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/23cf9a67-2ac2-40ac-bf73-ccbe62822163)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/68ddce2d-bda9-41e3-9ccf-fae5250a4b21)
-
+（**我自己的理解：我觉得信号量本质上就是用两个原子操作（申请和释放）来维护一个变量（有标识作用）**）
 1.  用二进制信号量实现的互斥
 
     ```cpp
@@ -198,6 +198,7 @@ Semaphore::V(){
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/478128a9-a447-473f-8bc2-221387116982)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/87c160a5-af22-45d4-9b1c-6ef12b7e56fa)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5b0d83b5-0f84-4cb6-808f-30167a721461)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/29e00918-c9d0-4d49-b3c6-704dbfa90b03)
 
 
 目的: 分离互斥和条件同步的关注
@@ -302,6 +303,44 @@ BoundedBuffer::Remove(c){
 ## 经典同步问题
 
 1.  读者-写者问题
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a8491b55-5015-4530-8ad9-fe25db87d43e)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1753c20a-308c-4bbb-a5ab-0f3d762751c1)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/951e731e-9578-4be6-a61d-1ed5a044e71f)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ea462331-d942-4c7e-8fa2-25369b44256f)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/15885121-e1d7-4d76-b11f-542e48128340)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9bfe2c8d-ae41-4b63-ba24-5d6d1d505804)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e3e62e93-e24e-44ae-ba44-607f845f7310)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6610d91c-b67e-4e3a-a6fb-f890d417592c)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/53ce75ad-de43-4108-a70c-0f6357f5f269)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a029d289-0c72-4c4c-b05f-a4c2280c488d)
+
+上述方法是读者优先：读者1开始读，之后来了写者1等待，之后又来了几个读者，此时写者需要继续等待，等所有读者读完，写着才可以写
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e83ec6bd-4cb2-41e2-a4ee-5cc7a3fcba63)
+
+还又读者和写者公平地位的。
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/28f3f3a8-ed69-4cff-b364-0c090667f1f2)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/537ec091-ff1c-4fb6-83f9-15a6afdcde1c)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/81cf78cc-815f-4ea7-be9f-4dae5bf2a0f7)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0cd3a596-f459-4fbf-8465-fec3b57f0ae9)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/02869096-b2eb-4a2e-844c-06c31947d661)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/454a137c-9139-4dc8-a573-455dcbfd0803)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7dcb7108-cba0-4a49-b84d-68e8aeb40d60)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d37cbba8-23e8-437a-9e2f-bbd403ddfc02)
 
     动机: 共享数据的访问
 
@@ -438,6 +477,15 @@ BoundedBuffer::Remove(c){
     ```
 
 2.  哲学家就餐问题(学习自 [github.com/cyc2018](http://github.com/cyc2018))
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0169d50a-2daf-4ec0-8b3a-77b58c533a9a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/131df432-099b-45c1-978a-9b57b37e680c)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b841ddac-68ac-418b-8b5a-54b7f0770515)
+
+如果五个人同时拿左边的刀叉，就会出现死锁问题，谁也吃不到饭，但是都在等其他人放下某个刀叉
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/69108393-4c55-45db-bc10-72151e6dd8e5)
+
+上图是个极端的方案——同时只能有一个科学家就餐
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/496f5635-c61a-4731-8f90-6247bff722d1)
 
     共享数据:
 
