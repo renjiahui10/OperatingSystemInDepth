@@ -208,7 +208,12 @@ Progress: 如果一个线程想要进入临界区,那么它最终会成功
 要小心使用,适合于较小的操作
 
 ## 方法2:基于软件的解决方案
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/62754971-0c50-4f8b-88d8-c04e746dcf5d)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fa16c4bd-1a18-4a34-a9a8-87e8ee8532c0)
 
+上图中whlie(turn!=1)；是一个完整代码，表示当turn！=1是空循环；
+
+上图中，当线程Ti在刚刚判断完flag(j)==1之后发生中断，跳转到线程Tj，可能发生两线程同时进入临界区。
 满足进程Pi和Pj之间互斥的经典的基于软件的解决方法(1981年)
 
 使用两个共享数据项
