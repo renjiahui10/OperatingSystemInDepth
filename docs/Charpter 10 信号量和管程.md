@@ -1,4 +1,4 @@
-# 深入理解操作系统 第十章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/61013b0e-9ae9-4480-9952-68561731c303)# 深入理解操作系统 第十章
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9c693a1c-b064-4eef-865f-59fc9526dbb1)
 
 
@@ -16,6 +16,7 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/60d39b33-5408-44e5-b63c-308dbe160274)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/54c853cd-6360-4208-8973-9f6a10af389d)
 
+上述整个P操作和V操作在操作系统的保护下是原子性操作，保证了信号量的正确实施
 信号量的抽象数据类型
 
 -   一个整形(sem),具有两个原子操作
@@ -48,6 +49,13 @@ P()能够阻塞,V()不会阻塞
 -   条件同步(调度约束——一个线程等待另一个线程的事情发生)
 
 ## 信号量使用
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0cdb14c5-ce68-4551-8e43-11a81b148834)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5330ee1a-c493-48e9-b6d8-c793d871dc71)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/340938d4-cd37-4820-a498-4e540e43a122)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9e2005a2-6107-46d0-961d-5bee26157a42)
+
+所谓的条件同步是指一个进程的某个模块的运行必须以另外一个进程的某个模块的运行结束为条件。比如说，B进程的X模块是准备数据q，A进程的N模块是处理数据q。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/565fda46-de51-429f-bed1-ba9f5abd3662)
 
 1.  用二进制信号量实现的互斥
 
