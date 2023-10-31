@@ -1,8 +1,19 @@
 # 深入理解操作系统 第十一章
 
 >   第十一章的主要内容是：死锁和进程通信
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/11a6a184-7572-40e4-a32f-0cb51802e253)
 
 ## 死锁问题
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2e1988ef-673a-4998-ab59-27dc52155055)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f44f62fe-1824-456d-add6-fd1a87b32761)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6a0cf092-03a9-4fdd-8b85-ce8995cdfdb6)
+
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3df19d93-9f60-4d93-954c-a934079da0fa)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0074e8fb-855f-4f69-ba09-e5ec40c43216)
 
 一组阻塞的进程持有一种资源等待获取另一个进程所占有的一个资源
 
