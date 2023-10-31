@@ -134,6 +134,7 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cf8fe8db-78e2-460d-bc5c-7a9540766948)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d7a341b1-e897-4e2a-9ed7-5ead6b093b5f)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/68aac6d6-4a60-472b-a437-519af7eeac90)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/628dff9f-5201-475e-bf07-db2bcf601103)
 
 需要系统具有一些额外的先验信息提供
 
