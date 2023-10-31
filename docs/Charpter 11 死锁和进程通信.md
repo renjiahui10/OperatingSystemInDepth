@@ -341,6 +341,15 @@ IPC facility 提供2个操作:
 
 ### 信号
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5788df28-ce88-4388-a31c-c6881a699334)
+
+例如像Ctrl+C可以是正在执行的进程停止下来，就是一个信号
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ec46b6b2-d55a-48e0-b6ba-0abe42eadc4f)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/72a3aedf-0089-4f75-b866-3837f3705c4b)
+
+signal()函数是注册信号历程的系统调用
 信号Signal
 
 - 软件中断通知事件处理
@@ -358,6 +367,12 @@ IPC facility 提供2个操作:
 
 ### 管道
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/81d20c4b-2f29-42b7-9f39-7c19cdeaa7b1)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9d5832c5-f056-44d3-9307-46a29ec09934)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/acc5a2b9-5196-4603-bfde-3b22cc5479f8)
+
 数据交换
 
 子进程从父进程继承文件描述符(0 stdin, 1 stdout, 2 stderr)
@@ -368,6 +383,11 @@ IPC facility 提供2个操作:
 
 ### 消息队列
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/85cfe559-b196-4673-b0a1-f952427317e8)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3ba8ab6b-ca5d-46be-83c4-a6178570e402)
+
+msgctl()系统调用:进程在结束时会释放占用的内存，但是如果想让消息队列继续存活下去，就可以使用msgctl()函数来控制。
 消息队列按FIFO来管理消息
 
 - message: 作为一个字节序列存储
@@ -375,6 +395,12 @@ IPC facility 提供2个操作:
 - FIFO &  FILO configuration
 
 ### 共享内存
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d09a3eea-22f1-4afa-8cb4-86261a4abf6a)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d756c8fa-a5c7-4a4e-9edb-cbe4e88e7008)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3c6dddc6-fb2d-4277-abd2-ebca190a796e)
 
 进程
 
