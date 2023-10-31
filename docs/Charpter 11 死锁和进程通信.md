@@ -1,4 +1,4 @@
-# 深入理解操作系统 第十一章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5e665f93-074a-475f-8381-031d30ea1db4)# 深入理解操作系统 第十一章
 
 >   第十一章的主要内容是：死锁和进程通信
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/11a6a184-7572-40e4-a32f-0cb51802e253)
@@ -250,6 +250,10 @@ Maintain wait-for graph
 
 ### 概述
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/88b51dd9-8d26-4bdc-a9e8-c430ac712661)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/90d6738a-70b9-44da-aa3b-ffd1daf88072)
+
 进程通信的机制及同步
 
 不使用共享变量的进程通信
@@ -271,6 +275,8 @@ IPC facility 提供2个操作:
 
 ### 直接通信
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cb0ea2a2-7681-40c6-ae89-6271cb4847ac)
+
 进程必须正确的命名对方:
 
 - send(P, message) - 发送消息到进程P
@@ -284,6 +290,23 @@ IPC facility 提供2个操作:
 - 链路可以是单向的,但通常是双向的
 
 ### 间接通信
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/55ef323a-a332-470a-a94a-9669b4118c93)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/16da29fc-6fbf-47e3-b274-42980317d5f0)
+
+消息队列是由最开始发送消息的进程创建的。
+
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/508a6c3e-8e1d-46da-86cb-c670a0c6a37c)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d32ef9e6-b93d-4fb8-8b3e-a3115c116f53)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e602dc8a-4042-4ae5-a595-b797e4b552b0)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e8da59d9-1bab-4eb3-84ea-b80df50278ae)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/358dbb8b-52de-4439-a86b-d144e865e9f5)
 
 定向从消息队列接收消息
 
