@@ -137,6 +137,16 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/628dff9f-5201-475e-bf07-db2bcf601103)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/42560db1-8400-4cdc-9f6a-f3b6ea9fe334)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/46dd4fb9-0c39-40bf-90db-b09bc1a7f78a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/36b3e979-af83-4346-96e0-3b7735699138)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a5a747ec-0221-4bdc-8cd6-85fd73338ae5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/59b1d8d1-e7cf-4dd0-8ab3-aebc6f5cbb42)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/763d29d2-7579-4340-88ce-1d8f7efa8636)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dcd4d79b-9478-48a8-b50e-c65c26d98c05)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/24a53fa1-2274-43c4-86de-5a274c992c4c)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/85236120-6720-449d-a98d-37fc2cac9e0c)
 
 需要系统具有一些额外的先验信息提供
 
@@ -154,6 +164,30 @@
 - 避免死锁: 确保系统永远不会进入不安全状态
 
 ### Deadlock Detection     检测
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/aeed9ce6-50da-43da-9051-21a22a0d7d10)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/631da06a-d9e0-4a08-bebc-520acb4af3e5)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7de5dbb2-88cb-432f-9647-700677888482)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/351ec7d7-234d-471e-9581-941d43c3e976)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e8a44474-4813-4c19-b791-c481b4449e70)
+
+也就是说操作系统检测死锁开销时很大的，所以操作系统一般不进行死锁检测。
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d9921f05-add8-4c9e-a8dd-4fa812ff5852)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/98d25253-771b-4e1f-b6e3-abd528810aab)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/43f7d6a1-7cd4-46f7-a55c-a1122a1c3634)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ac14e9b4-9985-4f8c-ab7c-59d6d9a11068)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/037680db-968b-412f-afce-4a0e16737a86)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d1c566b2-ac04-443c-9840-fefc299fd9f5)
 
 每个资源类型单一实例
 
@@ -185,6 +219,12 @@ Maintain wait-for graph
 
 ### Recovery from Deadlock 恢复
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c884d959-af5c-4655-ae80-082a9f0c48f6)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d15625bc-6476-4f55-9e9c-c86850e8bce8)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e422eb83-0bab-4609-a35f-e38c5c13cfe4)
+
 终止所有的死锁进程
 
 在一个时间内终止一个进程直到死锁消除
@@ -205,6 +245,8 @@ Maintain wait-for graph
 饥饿 - 同一进程可能一直被选作受害者,包括回滚的数量
 
 ## IPC
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/01726e93-ccb0-40d6-aba3-9ccabfdedd00)
 
 ### 概述
 
