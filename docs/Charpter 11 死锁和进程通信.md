@@ -15,14 +15,26 @@
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0074e8fb-855f-4f69-ba09-e5ec40c43216)
 
-一组阻塞的进程持有一种资源等待获取另一个进程所占有的一个资源
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f31dfb7e-195b-4311-98d0-b386f3a8126d)
 
-示例:
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/95248d31-f5ed-474a-bdd8-16fa50b2bc03)
 
-- 系统有2个磁带驱动器
-- P1和P2各有一个,都需要另外一个
+消耗资源由一个进程产生，一个进程使用。
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1b8d838c-50bd-4414-a786-848a77c8512b)
+
+<img width="575" alt="image" src="https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ecddd4c9-e5a2-4d98-ad5f-7394e1c605f2">
+
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/01141b2c-339e-4925-8432-536d03749bf9)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/85dd1f40-1538-4228-bc7e-5a7941a0a366)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d3e75fb5-38c8-4621-a061-744d7e73553e)
+
 
 ## 系统模型
+
 
 资源类型R1,R2,..,Rm(CPU, memory space, IO devices)
 
@@ -70,6 +82,13 @@
 - 如果每个资源类有几个实例,可能死锁
 
 ## 死锁特征
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a8463c0d-c9a2-43ea-874a-fd2362d48bf7)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a7b85f93-6fb1-4646-84f1-9f29400b6104)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7d27f634-d39b-40c6-9309-877c29462acc)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c50bb46c-efa3-4e85-9fba-0b67d41701be)
 
 死锁出现一定会出现以下四个条件,但是出现以下四个条件不一定死锁:
 
@@ -79,6 +98,8 @@
 - 循环等待: 存在等待进程集合{P0,P1,...,Pn},P0正在等待P1所占用的资源,P1正在等待P2占用的资源...Pn-1在等待Pn的资源,Pn正在等待P0所占用的资源
 
 ## 死锁处理方法
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4a43c321-10a2-40cc-a444-b40ac818c256)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6926e1f3-6619-487a-bf8c-9cc38b2c0dfb)
 
 常见方法
 
@@ -90,17 +111,29 @@
 
 限制申请方式
 
-- 互斥 - 共享资源不是必须的,必须占用非共享资源
+- 互斥 - 共享资源不是必须的,必须占用非共享资源（例如像打印机，之前只能互斥访问，现在加一个缓存，可以允许多个进程访问打印机缓存，同时打印机按顺序从缓存中读取数据打印
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a5628c46-1b26-4546-9b18-45ccea25441a)
+
 - 占用并等待 - 必须保证当一个进程请求的资源,它不持有任何其他资源
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7d4b8f4a-9069-4438-a942-9ca9ad1bfb63)
+
     - 需要进程请求并分配其所有资源,它开始执行之前或允许进程请求资源仅当进程没有资源
     - 资源利用率低,可能发生饥饿
 - 无抢占 -
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/35eb73b1-c6c9-4b1c-9cf1-66a20f5dd2db)
+
     - 如果进程占有某些资源,并请求其他不能被立即分配的资源,则释放当前正占有的资源
     - 被抢占资源添加到资源列表中
     - 只有当它能够获得旧的资源以及它请求新的资源,进程可以得到执行
 - 循环等待 - 对所有资源类型进行排序,并要求每个进程按照资源的顺序进行申请
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d4f55c02-23b2-43c8-81bf-f4c26b813d57)
+
 
 ### Deadlock Avoidance     避免
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/568c8bce-e3c0-4be0-9e23-0ea2ee42bc3b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cf8fe8db-78e2-460d-bc5c-7a9540766948)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d7a341b1-e897-4e2a-9ed7-5ead6b093b5f)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/68aac6d6-4a60-472b-a437-519af7eeac90)
 
 需要系统具有一些额外的先验信息提供
 
