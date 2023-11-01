@@ -1,4 +1,4 @@
-# 深入理解操作系统 第十二章
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2a7f5dca-4790-40f2-b903-34e144693397)# 深入理解操作系统 第十二章
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e76cc8a2-3917-4b44-9bfa-a2283108ad6b)
 
@@ -189,6 +189,8 @@ UNIX文件系统(UFS)语义:
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f171a806-e3b3-496c-a371-45d9ba9fd6e5)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d3cfb641-bd7c-4823-895f-3701321d04d7)
 
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b0f8aece-1c54-42a8-a949-56f90424e5a5)
+
 文件以目录的方式组织起来
 
 目录是一类特殊的文件: 每个目录都包含了一张表<name, pointer to file header>
@@ -246,13 +248,16 @@ Hash表 - hash数据结构的线性表: 减少目录搜索时间,碰撞,固定�
 一个未挂载的文件系统被挂载在挂载点上
 
 ### 文件别名
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1783c268-3534-47cb-914f-f22c884bfd78)
-
-![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f74be12f-4fef-419c-b226-9d893820fbb5)
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dead4a45-35bb-4bef-a9cf-68c01abc029f)
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9d72dd5a-4cfe-46cf-937a-4ca979caabcf)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f65ba059-d726-487f-bc56-811b6a04c12a)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e29ef0dc-cbc9-41da-97d8-18d6b426d22a)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/19125e30-5e01-4af1-9168-ec9fac254e7d)
 
 
 两个或多个文件名关联同一个文件:
