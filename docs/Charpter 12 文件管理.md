@@ -12,6 +12,7 @@
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fc9d4b6a-aa27-42c1-b965-0c180ec616a6)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/20cd6476-e114-4b67-851e-31d856029f95)
+![Uploading image.png…]()
 
 文件系统: 一种用于持久性存储的系统抽象
 
