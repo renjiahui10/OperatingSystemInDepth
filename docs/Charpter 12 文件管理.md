@@ -50,6 +50,26 @@
 
 ### 文件描述符（打开的文件在内存中维护的相关信息）
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e7ab74c3-7396-4c3e-a187-7f6155475ad6)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a330a26d-e0a3-4984-9701-7cd5e5b27b86)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9ccffe82-1a7d-4145-8a2d-e82a8dbca95b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f82b2813-ec33-400a-ad38-8d25b1a19789)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/898be466-4436-49c4-84f8-39f16ec83150)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5fa44753-b3fc-45fd-9e6a-00a54304dbe9)
+
+文件的用户视图和系统视图：也就是说文件从用户和系统的角度来讲是什么样子的（文件的用户视图是指从用户视图看到的文件是什么样子的，系统视图是指从操作系统看到的文件是什么样子的），也就是说从操作系统看，文件只是简单的字节序列，并不考虑文件的内部结构（数据结构，是jpg图片还是txt文档，这是由用户进程考虑的）
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/11007c69-ca60-4269-a82b-a05d557b8645)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8e2ec624-1506-456b-83fa-004074744479)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0d94e69f-5bef-4db0-bc1f-84ee0ffd98fd)
+
+磁盘访问的最小单位是块，即便是读写一个字节也得把整个块读出来。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/607e6605-9543-4dfb-a28b-ef573a431190)
+
+上述三种访问模式都是指在同一个文件中寻找该文件中不同的内容。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/05225f8e-535b-4fe7-a5fa-abe7bc9344af)
+
+上图中无结构和简单记录结构都是操作系统层面的，复杂结构是由应用程序来识别的。**但是，操作系统接口层面上一定程度可以识别文件是可执行文件还是简单的文本文件**
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/37b523c1-b7e8-4de9-9de1-076c47fe8b7a)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d2fd5cc9-90c4-4371-b28f-324de1c472ba)
 
 文件使用模式:
 
@@ -165,6 +185,8 @@ UNIX文件系统(UFS)语义:
 一些操作系统和文件系统提供该功能
 
 ### 目录
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f171a806-e3b3-496c-a371-45d9ba9fd6e5)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/d3cfb641-bd7c-4823-895f-3701321d04d7)
 
 文件以目录的方式组织起来
 
