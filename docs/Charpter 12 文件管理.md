@@ -12,7 +12,10 @@
 
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/fc9d4b6a-aa27-42c1-b965-0c180ec616a6)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/20cd6476-e114-4b67-851e-31d856029f95)
-![Uploading image.png…]()
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6df2b301-cbe2-483e-8a0e-4381086740a1)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/33f143a1-08b2-4a63-9061-02215e7e7557)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/97601738-8681-4fa2-9ad5-08e1cd00d522)
+
 
 文件系统: 一种用于持久性存储的系统抽象
 
@@ -45,7 +48,8 @@
 
 文件头: 在存储元数据中保存了每个文件的信息,保存文件的属性,跟踪哪一块存储块属于逻辑上文件结构的哪个偏移
 
-### 文件描述符
+### 文件描述符（打开的文件在内存中维护的相关信息）
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/e7ab74c3-7396-4c3e-a187-7f6155475ad6)
 
 文件使用模式:
 
