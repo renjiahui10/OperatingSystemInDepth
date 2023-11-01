@@ -15,6 +15,7 @@
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6df2b301-cbe2-483e-8a0e-4381086740a1)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/33f143a1-08b2-4a63-9061-02215e7e7557)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/97601738-8681-4fa2-9ad5-08e1cd00d522)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7837fb1c-4494-4e3d-8ce0-305d7ba3395a)
 
 
 文件系统: 一种用于持久性存储的系统抽象
@@ -245,6 +246,14 @@ Hash表 - hash数据结构的线性表: 减少目录搜索时间,碰撞,固定�
 一个未挂载的文件系统被挂载在挂载点上
 
 ### 文件别名
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/1783c268-3534-47cb-914f-f22c884bfd78)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/f74be12f-4fef-419c-b226-9d893820fbb5)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/dead4a45-35bb-4bef-a9cf-68c01abc029f)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9d72dd5a-4cfe-46cf-937a-4ca979caabcf)
+
 
 两个或多个文件名关联同一个文件:
 
