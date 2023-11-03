@@ -385,6 +385,8 @@ backpointers使用菊花链管理
 ## 数据块缓存
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a0814e01-0e3c-4ecd-8b04-b870f065f9cf)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2bc41597-a8b2-4157-bd55-dd3e8a1633ac)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3ef1ca86-9d89-4798-8ea8-007a4815e4fd)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4e5ceb37-ad6a-48f5-a523-bb926bdf42e7)
 
 数据块按需读入内存:
 
