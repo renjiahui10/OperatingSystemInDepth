@@ -291,6 +291,12 @@ backpointers使用菊花链管理
 限制路径可遍历文件目录的数量
 
 ### 文件系统种类
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6c35a352-255f-4a30-8d80-11f2543070e4)
+
+为什么会有这么多文件系统呢：不同的文件系统由于存储的数据不同，会做不同的优化，使用场景的不同也会做不同的优化，比如说光盘的文件系统是一次性写入多次读出，大多数文件系统是多次读入多次读出，同时不同的文件系统的安全要求也是不同的，安全级别越高，访问效率也会相对下降，对于安全级别不高的，可以减弱安全机制，提高访问效率，
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/ce89294b-4c53-4a68-8556-5d64a1d6e130)
+
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/cbc75e01-78e1-475e-9d02-a66d78bd2f38)
 
 磁盘文件系统: 文件存储在数据存储设备上,如磁盘; 例如: FAT,NTFS,ext2,3,ISO9660等
 
@@ -303,6 +309,14 @@ backpointers使用菊花链管理
 特殊,虚拟文件系统
 
 ## 虚拟文件系统
+虚拟文件系统的提出是为了面对有多种不同的文件系统，而在操作系统中希望对上提供一个统一的接口这个问题而提出的
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/5b2017ea-486a-4d6a-82eb-b44bf6a20dba)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/7190150a-982e-4bcc-9253-c30e4fa02846)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0367b184-3f55-4d4b-bf36-81dae73b991b)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/6bf4c34b-bbc9-44c9-80a8-107b4b51e1c9)
+
+每个文件都有一个文件控制块
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/86c6f355-9f8a-4e01-9f0c-3bf94fefe864)
 
 分层结构:
 
