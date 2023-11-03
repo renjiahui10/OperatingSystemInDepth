@@ -387,6 +387,11 @@ backpointers使用菊花链管理
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2bc41597-a8b2-4157-bd55-dd3e8a1633ac)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/3ef1ca86-9d89-4798-8ea8-007a4815e4fd)
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/4e5ceb37-ad6a-48f5-a523-bb926bdf42e7)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8d81b1bd-1ec9-41cf-a07e-229303626db7)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a707b123-d3ca-419e-b751-94fc4b7bf767)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/9d02888f-abd4-4f55-95c9-50f6e4386a47)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/8979482d-fbbf-4cce-8db8-75e7cf99d9ef)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/0accf6c4-0cf9-4948-9a8e-446f33e804c4)
 
 数据块按需读入内存:
 
