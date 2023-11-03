@@ -317,7 +317,13 @@ backpointers使用菊花链管理
 
 每个文件都有一个文件控制块
 ![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/86c6f355-9f8a-4e01-9f0c-3bf94fefe864)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/b0ad53d9-c600-4474-b205-8239123b5cc3)
 
+上图中vol代表卷控制块，dir代表目录项，file代表文件控制块，data block代表具体的文件数据。
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/c6e9b515-9a06-46c4-a204-fb50819bdf8c)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/51e87c0e-0816-4e1b-8a91-7c68f74ba05a)
+
+卷控制块在磁盘上的位置是固定的
 分层结构:
 
 顶层: 文件,文件系统API
@@ -377,6 +383,8 @@ backpointers使用菊花链管理
 目录节点: 在遍历一个文件路径时进入内存
 
 ## 数据块缓存
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/a0814e01-0e3c-4ecd-8b04-b870f065f9cf)
+![image](https://github.com/renjiahui10/OperatingSystemInDepth/assets/114166264/2bc41597-a8b2-4157-bd55-dd3e8a1633ac)
 
 数据块按需读入内存:
 
